@@ -53,16 +53,17 @@ get_header(); ?>
                 <div class="text"><?php the_field('instagram_page_top_ideal_for') ?></div>
               </div>
               <div class="btn-wrap wow fadeIn" data-wow-delay="0.5s">
-                <?php
-
-                $button = get_field('instagram_page_top_button');
-
-                ?>
-                <a href="<?php echo $button['url'] ?>" class="btn"><?php echo $button['title'] ?></a>
+                <?php $button = get_field('instagram_page_top_button'); ?>
+                <a class="btn open-booking-form"><?php echo $button['title'] ?></a>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="booking-form" id="booking_form">
+      <div class="container">
+        <?php echo get_field('instagram_page_booking_form'); ?>
       </div>
     </section>
     <section class="video-carousel wow fadeIn">

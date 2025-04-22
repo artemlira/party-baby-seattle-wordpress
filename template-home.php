@@ -578,8 +578,9 @@ $cto_background_3 = get_field('home_page_cta_block_3_background_url');
                class="btn btn-line"><?php esc_html_e('View more', 'partybaby'); ?></a>
           </div>
           <div class="package-item wow fadeIn" data-wow-delay="0.6s">
-            <div class="title">
-              <?php esc_html_e('LUXE PACKAGES', 'partybaby'); ?>
+            <div class="title"><b>
+                <?php esc_html_e('LUXE PACKAGES', 'partybaby'); ?>
+              </b>
             </div>
             <figure class="package-image">
               <i class="art-line"></i>
@@ -587,12 +588,13 @@ $cto_background_3 = get_field('home_page_cta_block_3_background_url');
               <img loading="lazy" src="<?php echo get_template_directory_uri() ?>/img/events-pack-4.jpg" alt="Item 1">
             </figure>
             <div class="package-description">
-              <p>The Luxe Package includes our enchanting Itty Bitty Bounce House, paired perfectly with our premium
+              <p>The Luxe Package includes our enchanting Itty Bitty Bounce House, paired perfectly with our
+                premium
                 Soft Play Packages.</p>
               <p>This combination lets little ones jump for joy and play safely at the same time.</p>
             </div>
             <div class="package-price-text">
-              <?php esc_html_e('Four hour jump package | $ 725', 'partybaby'); ?>
+              <?php esc_html_e('Four hour jump package | $725', 'partybaby'); ?>
             </div>
             <a href="<?php echo esc_url(home_url('packages/#category-luxe')); ?>"
                class="btn btn-line"><?php esc_html_e('View more', 'partybaby'); ?></a>
@@ -614,7 +616,7 @@ $cto_background_3 = get_field('home_page_cta_block_3_background_url');
                 hours on end.</p>
             </div>
             <div class="package-price-text">
-              <?php esc_html_e('Four hour jump package | 825 $', 'partybaby'); ?>
+              <?php esc_html_e('Four hour jump package | $825', 'partybaby'); ?>
             </div>
             <a href="<?php echo esc_url(home_url('packages/#category-luxe')); ?>"
                class="btn btn-line"><?php esc_html_e('View more', 'partybaby'); ?></a>
@@ -634,8 +636,8 @@ $cto_background_3 = get_field('home_page_cta_block_3_background_url');
                 sensory experience for busy bodies.</p>
             </div>
             <div class="package-price-text">
-              <?php esc_html_e('Four hour jump package | 550 $', 'partybaby'); ?><br>
-              <?php esc_html_e('With slide | 675 $', 'partybaby'); ?>
+              <?php esc_html_e('Four hour jump package | $550', 'partybaby'); ?><br>
+              <?php esc_html_e('With slide | $675', 'partybaby'); ?>
             </div>
             <a href="<?php echo esc_url(home_url('/the-ball-pit/')); ?>"
                class="btn btn-line"><?php esc_html_e('View more', 'partybaby'); ?></a>

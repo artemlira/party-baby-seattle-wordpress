@@ -9,7 +9,7 @@
 
 if (!defined('_S_VERSION')) {
   // Replace the version number of the theme on each release.
-  define('_S_VERSION', '1.0.5');
+  define('_S_VERSION', '1.0.7');
 }
 
 /**
@@ -176,7 +176,7 @@ function partybaby_scripts()
   wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@7.3.0/swiper-bundle.min.js', ['jquery'], _S_VERSION, true);
 
   // Acuity Scheduling (завантаження лише на сторінках package)
-  if (is_singular('package')) {
+  if (is_singular('package') || is_page(319)) {
     wp_enqueue_script('acuity-js', 'https://embed.acuityscheduling.com/js/embed.js', ['jquery'], _S_VERSION, true);
   }
 

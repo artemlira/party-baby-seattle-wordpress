@@ -706,7 +706,7 @@
   $(".close-mobile-menu").on("click", function () {
     $(".mobile-menu-container").removeClass("active");
     $(".mobile-menu-container .menu-item-has-children .sub-menu").animate(
-      { height: "0" },
+      {height: "0"},
       300,
     ); // Скрываем меню
     $(".mobile-menu-container .menu-item-has-children").removeClass("active");
@@ -800,14 +800,14 @@
     if (submenu.height() === 0) {
       $(this).addClass("active");
       submenu.animate(
-        { height: submenu.data("height") + "px" },
+        {height: submenu.data("height") + "px"},
         300,
         function () {
           parentMenu.css("height", "auto"); // Встановлюємо авто-висоту батьківського контейнера
         },
       );
     } else {
-      submenu.animate({ height: "0" }, 300, function () {
+      submenu.animate({height: "0"}, 300, function () {
         $(this).closest(".menu-item-has-children").removeClass("active");
         parentMenu.css("height", "auto"); // Встановлюємо авто-висоту після закриття
       });
@@ -1018,8 +1018,8 @@
 
   // Функція для анімації чисел
   function animateCounter($element, start, end, duration) {
-    $({ count: start }).animate(
-      { count: end },
+    $({count: start}).animate(
+      {count: end},
       {
         duration: duration,
         easing: "linear",
@@ -1040,7 +1040,7 @@
       rect.top >= 0 &&
       rect.left >= 0 &&
       rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
+      (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
@@ -1296,15 +1296,17 @@ function moveSliderRange(e, element) {
 }
 
 function init(element) {
-  const sliderRange = element.querySelector("[data-image-comparison-range]");
+  if (element) {
+    const sliderRange = element.querySelector("[data-image-comparison-range]");
 
-  if ("ontouchstart" in window === false) {
-    sliderRange.addEventListener("mouseup", (e) => setSliderstate(e, element));
-    sliderRange.addEventListener("mousedown", moveSliderThumb);
+    if ("ontouchstart" in window === false) {
+      sliderRange.addEventListener("mouseup", (e) => setSliderstate(e, element));
+      sliderRange.addEventListener("mousedown", moveSliderThumb);
+    }
+
+    sliderRange.addEventListener("input", (e) => moveSliderRange(e, element));
+    sliderRange.addEventListener("change", (e) => moveSliderRange(e, element));
   }
-
-  sliderRange.addEventListener("input", (e) => moveSliderRange(e, element));
-  sliderRange.addEventListener("change", (e) => moveSliderRange(e, element));
 }
 
 init(imageComparisonSlider);
