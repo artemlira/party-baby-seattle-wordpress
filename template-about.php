@@ -4,37 +4,84 @@
  *
  */
 
-get_header(); ?>
+get_header();
+$hero_title = get_field('about_page_hero_title');
+$hero_text = get_field('about_page_hero_text');
+$hero_btn = get_field('about_page_hero_btn');
+$hero_slider = get_field('about_page_hero_slider');
+$about_2_title = get_field('about_page_about_2_title');
+$about_2_text = get_field('about_page_about_2_text');
+$about_2_btn = get_field('about_page_about_2_btn');
+$about_3_title = get_field('about_page_about_3_title');
+$about_3_text = get_field('about_block_3_jeany_text');
+$about_3_signature = get_field('about_block_3_jeany_signature');
+$about_3_image = get_field('about_block_3_jeany_photo');
+$about_4_title = get_field('about_page_about_4_title');
+$about_4_shortcode = get_field('about_page_about_4_shortcode');
+$about_5_title = get_field('about_page_about_5_title');
+$about_5_text = get_field('about_page_about_5_text');
+$about_5_list = get_field('about_page_about_5_list');
+$about_5_image = get_field('about_page_about_5_image');
+$about_6_title = get_field('about_page_about_6_title');
+$about_6_btn_1 = get_field('about_page_about_6_btn_1');
+$about_6_btn_2 = get_field('about_page_about_6_btn_2');
+$about_7_title = get_field('about_page_about_7_title');
+$about_7_text = get_field('about_page_about_7_text');
+$cto_background = get_field('about_page_cta_block_bg');
+$cto_title = get_field('about_page_cta_block_title');
+$cto_text = get_field('about_page_cta_block_text');
+$cto_button = get_field('about_page_cta_block_btn');
+?>
   <div class="page page-about">
     <section class="home-hero about-hero wow fadeIn">
       <div class="container hero-title-box-wrap">
         <div class="hero-title-box wow fadeIn" data-wow-delay="0.2s">
-          <h1><?php esc_html_e('MEET PARTY BABY', 'partybaby'); ?></h1>
-          <p><?php esc_html_e('SEATTLE\'S PREMIER MOBILE SOFT PLAY ENTERTAINMENT SERVICE FOR KIDS AGES 0-5', 'partybaby'); ?></p>
-          <a href="<?php echo esc_url(home_url('/party-booking')); ?>"
-             class="btn"><?php esc_html_e('LET\'S PARTY', 'partybaby'); ?></a>
+          <h1><?php echo $hero_title; ?></h1>
+          <p><?php echo $hero_text; ?></p>
+          <a href="<?php echo $hero_btn['url']; ?>"
+             class="btn"><?php echo $hero_btn['title']; ?></a>
         </div>
       </div>
-      <div class="home-hero-slider">
-        <div class="item">
-          <img src="<?php echo get_template_directory_uri() ?>/img/about-hero-1.jpg" alt="<?php bloginfo('name'); ?>">
+      <?php if (!empty($hero_slider)) : ?>
+        <div class="home-hero-slider">
+          <?php foreach ($hero_slider as $slide) :
+            $image = $slide['image']; ?>
+            <div class="item">
+              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+            </div>
+          <?php endforeach; ?>
         </div>
-        <div class="item">
-          <img src="<?php echo get_template_directory_uri() ?>/img/about-hero-2.jpg" alt="<?php bloginfo('name'); ?>">
-        </div>
-      </div>
+      <? endif; ?>
     </section>
     <section class="about-block-2">
       <div class="container">
         <h2 class="title wow fadeIn"
-            data-wow-delay="0.2s"><?php esc_html_e('Experience the unmatched Party Baby experience', 'partybaby'); ?></h2>
+            data-wow-delay="0.2s"><?php echo $about_2_title; ?></h2>
         <div class="text wow fadeIn" data-wow-delay="0.3s">
-          <p><?php esc_html_e('Whether you\'re a parent planning a birthday party or an event planner working on a large corporate gathering, you\'ll enjoy a seamless and professional booking and party experience. You don\'t have to lift a finger.', 'partybaby'); ?></p>
-          <p><?php esc_html_e('We consult with you on the best location, size, and package for your party\'s needs, as well as handle the delivery, set-up, and take-down. You\'ll wonder how you ever got by without Party Baby Seattle!', 'partybaby'); ?></p>
+          <?php echo $about_2_text; ?>
         </div>
         <div class="btn-wrap wow fadeIn" data-wow-delay="0.4s">
-          <a href="<?php echo esc_url(home_url('/party-booking')); ?>"
-             class="btn"><?php esc_html_e('BOOK THE FUN', 'partybaby'); ?></a>
+          <a href="<?php echo $about_2_btn['url']; ?>"
+             class="btn"><?php echo $about_2_btn['title']; ?></a>
+        </div>
+      </div>
+    </section>
+    <section class="home-cta-3 wow fadeIn">
+      <div class="box wow fadeIn" data-wow-delay="0.1s"
+           style='background-image: url("<?php echo $cto_background['url']; ?>")'>
+        <div class="item wow fadeIn" data-wow-delay="0.2s">
+          <?php if (!empty($cto_title)) : ?>
+            <h2 class="title"><?php echo $cto_title; ?></h2>
+          <?php endif; ?>
+          <?php if (!empty($cto_text)) : ?>
+            <p class="text wow fadeIn" data-wow-delay="0.3s"><?php echo $cto_text; ?></p>
+          <?php endif; ?>
+          <?php if (!empty($cto_button)): ?>
+            <div class="btn-wrap wow fadeIn" data-wow-delay="0.4s">
+              <a href="<?php echo $cto_button['url'] ?>" target="<?php echo $cto_button['target'] ?>"
+                 class="btn"><?php echo $cto_button["title"]; ?></a>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
     </section>
@@ -44,18 +91,15 @@ get_header(); ?>
         <div class="flex">
           <div class="col-50">
             <h2 class="title wow fadeIn"
-                data-wow-delay="0.3s"><?php esc_html_e('You deserve an easy, stress-free way to keep the kids playing at your event', 'partybaby'); ?></h2>
+                data-wow-delay="0.3s"><?php echo $about_3_title; ?></h2>
             <div class="text wow fadeIn" data-wow-delay="0.4s">
-              <p><?php esc_html_e('We\'re parents, so we know how hard it can be to keep little ones entertained.', 'partybaby'); ?></p>
-              <p><?php esc_html_e('We bring the fun to you. You know the kids will have a safe, clean, fun area to play, which means the adults can relax and enjoy the party.', 'partybaby'); ?></p>
-              <p><?php esc_html_e('You\'ll be impressed by the quality of both our products and personnel. But you\'ll love the memories made during your event even more.', 'partybaby'); ?></p>
+              <?php echo $about_3_text; ?>
             </div>
-            <img class="wow fadeIn" data-wow-delay="0.5s"
-                 src="<?php echo get_template_directory_uri() ?>/img/about-3.2.png"
-                 alt="<?php esc_html_e('Sign', 'partybaby'); ?>">
+            <img class="wow fadeIn" data-wow-delay="0.5s" src="<?php echo $about_3_signature['url']; ?>"
+                 alt="<?php echo $about_3_signature['alt']; ?>">
           </div>
           <div class="col-50 wow fadeIn" data-wow-delay="0.1s">
-            <img src="<?php the_field('about_block_3_jeany_photo') ?>" alt="<?php esc_html_e('Photo', 'partybaby'); ?>">
+            <img src="<?php echo $about_3_image['url']; ?>" alt="<?php echo $about_3_image['alt']; ?>">
           </div>
         </div>
       </div>
@@ -63,10 +107,9 @@ get_header(); ?>
     <section class="about-block-4 home-testimonials wow fadeIn">
       <div class="container">
         <h2 class="title wow fadeIn"
-            data-wow-delay="0.2s"><?php esc_html_e('Hear from other parents and event planners', 'partybaby'); ?></h2>
-
+            data-wow-delay="0.2s"><?php echo $about_4_title; ?></h2>
         <div class="wow fadeIn" data-wow-delay="0.3s">
-          <?php echo do_shortcode('[reviews-feed feed=1]') ?>
+          <?php echo do_shortcode($about_4_shortcode); ?>
         </div>
       </div>
     </section>
@@ -74,53 +117,26 @@ get_header(); ?>
       <div class="container">
         <div class="flex">
           <div class="col-50">
-            <h2 class="title wow fadeIn" data-wow-delay="0.2s"><?php esc_html_e('What is', 'partybaby'); ?>
-              <span><?php esc_html_e('soft play?', 'partybaby'); ?></span></h2>
+            <h2 class="title wow fadeIn" data-wow-delay="0.2s"><?php echo $about_5_title; ?></h2>
             <div class="text wow fadeIn" data-wow-delay="0.4s">
-              <p><?php esc_html_e('Mobile soft play equipment or soft play rentals are just like they sound–soft and irresistibly fun play set-ups for little kids to keep them occupied for hours, whether inside your own home or out in the backyard. Play areas typically include some or all of the following fun activities:', 'partybaby'); ?></p>
-              <ul>
-                <li>
-                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="4" cy="4" r="4" fill="#151515"/>
-                  </svg>
-                  <?php esc_html_e('Ball pits', 'partybaby'); ?>
-                </li>
-                <li>
-                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="4" cy="4" r="4" fill="#151515"/>
-                  </svg>
-                  <?php esc_html_e('Rubber animals', 'partybaby'); ?>
-                </li>
-                <li>
-                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="4" cy="4" r="4" fill="#151515"/>
-                  </svg>
-                  <?php esc_html_e('Tunnels', 'partybaby'); ?>
-                </li>
-                <li>
-                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="4" cy="4" r="4" fill="#151515"/>
-                  </svg>
-                  <?php esc_html_e('Climbing sets', 'partybaby'); ?>
-                </li>
-                <li>
-                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="4" cy="4" r="4" fill="#151515"/>
-                  </svg>
-                  <?php esc_html_e('Inflatables', 'partybaby'); ?>
-                </li>
-                <li>
-                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="4" cy="4" r="4" fill="#151515"/>
-                  </svg>
-                  <?php esc_html_e('And more!', 'partybaby'); ?>
-                </li>
-              </ul>
+              <?php echo $about_5_text; ?>
+              <?php if (!empty($about_5_list)) : ?>
+                <ul>
+                  <?php foreach ($about_5_list as $item) : ?>
+                    <li>
+                      <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="4" cy="4" r="4" fill="#151515"/>
+                      </svg>
+                      <?php echo $item['text']; ?>
+                    </li>
+                  <?php endforeach; ?>
+                </ul>
+              <?php endif; ?>
             </div>
           </div>
           <div class="col-50 wow fadeIn" data-wow-delay="0.1s">
-            <img src="<?php echo get_template_directory_uri() ?>/img/about-5.png"
-                 alt="<?php esc_html_e('Photo', 'partybaby'); ?>">
+            <img src="<?php echo $about_5_image['url']; ?>"
+                 alt="<?php echo $about_5_image['alt']; ?>">
           </div>
         </div>
       </div>
@@ -128,15 +144,12 @@ get_header(); ?>
     <section class="about-block-6 wow fadeIn">
       <div class="container">
         <h3 class="title wow fadeIn"
-            data-wow-delay="0.1s"><?php esc_html_e('BROWSE SOFT PLAY PACKAGES', 'partybaby'); ?></h3>
+            data-wow-delay="0.1s"><?php echo $about_6_title; ?></h3>
         <div class="btn-wrap">
-          <a href="<?php echo esc_url(home_url('/soft-play-packages/')); ?>" class="btn wow fadeIn"
-             data-wow-delay="0.2s"><?php esc_html_e('FOR PARENTS', 'partybaby'); ?></a>
-          <?php $page_id = 71; // corporate events
-          $page_url = get_permalink($page_id);
-          ?>
-          <a href="<?php echo $page_url; ?>" class="btn wow fadeIn"
-             data-wow-delay="0.3s"><?php esc_html_e('FOR EVENT PLANNERS', 'partybaby'); ?></a>
+          <a href="<?php echo $about_6_btn_1['url']; ?>" class="btn wow fadeIn"
+             data-wow-delay="0.2s"><?php echo $about_6_btn_1['title']; ?></a>
+          <a href="<?php echo $about_6_btn_2['url']; ?>" class="btn wow fadeIn"
+             data-wow-delay="0.3s"><?php echo $about_6_btn_2['title']; ?></a>
         </div>
       </div>
     </section>
@@ -191,9 +204,9 @@ get_header(); ?>
     </section>
     <section class="about-block-7">
       <div class="container">
-        <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php esc_html_e('WE\'RE ON A MISSION', 'partybaby'); ?></h2>
+        <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $about_7_title; ?></h2>
         <p class="text wow fadeIn"
-           data-wow-delay="0.3s"><?php esc_html_e('to help parents and event organizers alike keep the littles entertained and safe during your next event.', 'partybaby'); ?></p>
+           data-wow-delay="0.3s"><?php echo $about_7_text; ?></p>
       </div>
     </section>
     <?php get_template_part('template-parts/instagram-feed-5'); ?>
