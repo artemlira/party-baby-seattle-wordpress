@@ -2603,7 +2603,7 @@ body {
 }
 
 .home-testimonials .sb-item-rating {
-  order: 3;
+  order: 1;
   width: 100%;
 }
 
@@ -2630,10 +2630,6 @@ body {
   width: 40px;
   min-width: 40px;
   height: 40px;
-}
-
-.home-testimonials .sb-item-rating {
-  color: #F9E748 !important;
 }
 
 .home-testimonials .sb-item-author-ctn {
@@ -2803,6 +2799,10 @@ body {
   margin-top: clamp(64px, 47.102px + 3.6735vw, 100px);
   margin-bottom: clamp(64px, 47.102px + 3.6735vw, 100px);
   background: url("img/home-booking_bg.jpg") center / cover no-repeat;
+}
+
+.page-home .home-booking {
+  background: url("img/home-page-home-booking_bg.jpg") center / cover no-repeat;
 }
 
 .home-booking .container {
