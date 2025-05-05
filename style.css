@@ -3233,7 +3233,12 @@ body {
   white-space: nowrap;
 }
 
-.events-cta-3 .title {
+.events-cta-4 {
+  margin-bottom: clamp(64px, 47.102px + 3.6735vw, 100px);
+}
+
+.events-cta-3 .title,
+.events-cta-4 .title {
   max-width: 600px;
   margin: 0 auto 12px;
   font-family: HarlowDuoSerifPlain;
@@ -3245,12 +3250,23 @@ body {
   letter-spacing: 0;
 }
 
-.events-cta-3 .text {
+.events-cta-4 .title {
+  max-width: initial;
+}
+
+.events-cta-3 .text,
+.events-cta-4 .text {
   line-height: 1.5;
   text-align: center;
 }
 
-.events-cta-3 .box {
+.events-cta-4 .text {
+  max-width: 758px;
+  margin: 0 auto;
+}
+
+.events-cta-3 .box,
+.events-cta-4 .box {
   padding: 100px 16px;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -3258,7 +3274,8 @@ body {
   background-size: cover;
 }
 
-.events-cta-3 .item {
+.events-cta-3 .item,
+.events-cta-4 .item {
   position: relative;
   max-width: 840px;
   padding: 40px 78px;
@@ -3267,14 +3284,21 @@ body {
   border-radius: 12px;
 }
 
-.events-cta-3 .btn-wrap {
+.events-cta-4 .item {
+  max-width: 1120px;
+  padding: 32px 64px 52px;
+}
+
+.events-cta-3 .btn-wrap,
+.events-cta-4 .btn-wrap {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
 }
 
-.events-cta-3 .btn {
+.events-cta-3 .btn,
+.events-cta-4 .btn {
   width: fit-content;
   padding: 12px 54px;
   white-space: nowrap;
@@ -12130,7 +12154,8 @@ input.wpcf7-form-control.wpcf7-file::after {
   }
 
   .home-cta-3,
-  .events-cta-3 {
+  .events-cta-3,
+  .events-cta-4 {
     padding-top: 64px;
   }
 
@@ -12140,32 +12165,38 @@ input.wpcf7-form-control.wpcf7-file::after {
   }
 
   .home-cta-3 .item,
-  .events-cta-3 .item {
+  .events-cta-3 .item,
+  .events-cta-4 .item {
     padding: 24px 24px 32px;
   }
 
   .home-cta-3 .title,
-  .events-cta-3 .title {
+  .events-cta-3 .title,
+  .events-cta-4 .title {
     font-size: 24px;
   }
 
   .home-cta-3 .text,
-  .events-cta-3 .text {
+  .events-cta-3 .text,
+  .events-cta-4 .text {
     font-size: 12px;
   }
 
   .home-cta-3 .btn-wrap,
-  .events-cta-3 .btn-wrap {
+  .events-cta-3 .btn-wrap,
+  .events-cta-4 .btn-wrap {
     min-width: initial;
   }
 
   .home-cta-3 .btn,
-  .events-cta-3 .btn {
+  .events-cta-3 .btn,
+  .events-cta-4 .btn {
     min-width: initial;
     padding: 12px 20px;
   }
 
-  .events-cta-3 .box {
+  .events-cta-3 .box,
+  .events-cta-4 .box {
     padding: 68px 16px;
     background-attachment: unset;
   }

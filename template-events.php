@@ -20,9 +20,13 @@ get_header(); ?>
     $events_cta_3_text = get_field('events_page_cta_3_text');
     $events_cta_3_button = get_field('events_page_cta_3_link');
     $events_cta_3_background = get_field('events_page_cta_3_background');
+    $events_cta_4_title = get_field('events_page_cta_4_title');
+    $events_cta_4_text = get_field('events_page_cta_4_text');
+    $events_cta_4_button = get_field('events_page_cta_4_link');
+    $events_cta_4_background = get_field('events_page_cta_4_background');
     ?>
     <section class="events-hero wow fadeIn"
-             style="background-image: url(<?php echo $hero_bg ?>); background-size: cover; background-position: center bottom;">
+             style="background-image: url(<?php echo $hero_bg ?>); background-size: cover; background-position: center;">
       <div class="container">
         <h1 class="title  wow fadeIn" data-wow-delay="0.1s"><?php echo $hero_title ?></h1>
         <div class="bianka  wow fadeIn" data-wow-delay="0.2s"><?php echo $hero_subtitle ?></div>
@@ -72,6 +76,20 @@ get_header(); ?>
              target="<?php echo $intro_info_btn['target']; ?>"><?php echo $intro_info_btn['title']; ?></a>
         </div>
       <?php endif; ?>
+    </section>
+    <section class="events-cta-4 wow fadeIn">
+      <div class="box wow fadeIn" data-wow-delay="0.1s"
+        <?php if ($events_cta_4_background): ?>
+          style='background-image: url("<?php echo $events_cta_4_background['url']; ?>")' <?php endif; ?>>
+        <div class="item">
+          <h2 class="title"><?php echo $events_cta_4_title; ?></h2>
+          <p class="text wow fadeIn" data-wow-delay="0.3s"><?php echo $events_cta_4_text; ?></p>
+          <div class="btn-wrap wow fadeIn" data-wow-delay="0.4s">
+            <a href="<?php echo $events_cta_4_button['url'] ?>" target="<?php echo $events_cta_4_button['target'] ?>"
+               class="btn"><?php echo $events_cta_4_button["title"]; ?></a>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="logos-carousel wow fadeIn">
       <?php
