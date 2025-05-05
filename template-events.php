@@ -14,6 +14,7 @@ get_header(); ?>
     $hero_link = get_field('events_page_hero_link');
     $hero_description = get_field('events_page_hero_description');
     $hero_bg = get_field('events_page_hero_background_image');
+    $intro_info_btn = get_field('events_page_intro_info_btn');
     $events_cta_3_bg = get_field('events_page_cta_3_image');
     $events_cta_3_title = get_field('events_page_cta_3_title');
     $events_cta_3_text = get_field('events_page_cta_3_text');
@@ -65,6 +66,12 @@ get_header(); ?>
         <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php esc_html_e($intro_info_title, 'partybaby'); ?></h2>
         <div class="text wow fadeIn" data-wow-delay="0.2s"><?php echo($intro_info_description); ?></div>
       </div>
+      <?php if (!empty($intro_info_btn)): ?>
+        <div class="intro-info-button-wrapper">
+          <a class="intro-info-button btn" href="<?php echo $intro_info_btn['url']; ?>"
+             target="<?php echo $intro_info_btn['target']; ?>"><?php echo $intro_info_btn['title']; ?></a>
+        </div>
+      <?php endif; ?>
     </section>
     <section class="logos-carousel wow fadeIn">
       <?php

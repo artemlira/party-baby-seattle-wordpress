@@ -1343,7 +1343,8 @@ body {
   letter-spacing: 0.7px;
 }
 
-.site-header li#menu-item-11::after {
+.site-header li#menu-item-11::after,
+.site-header li#menu-item-2109::after {
   position: relative;
   top: 6px;
   left: -3px;
@@ -1358,7 +1359,8 @@ body {
   background-size: cover;
 }
 
-.site-header li#menu-item-11:hover::after {
+.site-header li#menu-item-11:hover::after,
+.site-header li#menu-item-2109:hover::after {
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 7L0 1.0636L1.075 0L6 4.87279L10.925 0L12 1.0636L6 7Z' fill='%235F9392'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: cover;
@@ -4914,7 +4916,7 @@ body {
   z-index: 1;
   display: block;
   content: "";
-  background: linear-gradient(90deg, #FFF 6%, rgb(255 255 255 / 62.8%) 64%, rgb(255 255 255 / 0%) 100%);
+  background: linear-gradient(90deg, #FFF 6%, rgb(255 255 255 / 63%) 64%, rgb(255 255 255 / 0%) 100%);
 }
 
 .page-events .events-hero > .container {
@@ -5021,6 +5023,10 @@ body {
   padding-bottom: 66px;
 }
 
+.page-events .intro-info .container {
+  position: relative;
+}
+
 .page-events .intro-info .title {
   position: relative;
   z-index: 1;
@@ -5034,12 +5040,12 @@ body {
 }
 
 .page-events .intro-info .text {
-  max-width: 1050px;
+  max-width: 1022px;
   margin: 0 auto;
   font-family: Montserrat-Regular;
   font-size: 20px;
   font-weight: 400;
-  line-height: 30px;
+  line-height: 1.5;
   color: #151515;
   text-align: center;
 }
@@ -5048,18 +5054,54 @@ body {
   margin-bottom: 32px;
 }
 
-.page-events .intro-info .container::after {
+.page-events .intro-info .container::after,
+.page-events .intro-info .container::before {
   position: absolute;
-  bottom: -49px;
-  left: 84px;
   display: block;
-  width: 276px;
-  height: 106px;
+  width: clamp(140px, 125.9184px + 3.0612vw, 170px);
+  height: clamp(72px, 65.4286px + 1.4286vw, 86px);
   content: '';
   background: url("img/home-hire.svg");
   background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.page-events .intro-info .container::after {
+  top: 8%;
+  left: 5%;
+}
+
+.page-events .intro-info .container::before {
+  right: 0;
+  bottom: -120px;
+}
+
+@media screen and (max-width: 998px) {
+  .page-events .intro-info .container::after {
+    top: -30%;
+    right: 0;
+    left: initial;
+    z-index: -1;
+  }
+
+  .page-events .intro-info .container::before {
+    right: initial;
+    bottom: -70%;
+    left: clamp(-45px, -75.1003px + 7.5251vw, 0px);
+  }
+}
+
+.page-events .intro-info-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-events .intro-info-button-wrapper .intro-info-button {
+  width: fit-content;
+  min-width: initial;
+  padding: 12px 42px;
 }
 
 .page-events .logos-carousel {
@@ -13504,10 +13546,6 @@ input.wpcf7-form-control.wpcf7-file::after {
     margin-bottom: 30px;
     font-size: 28px;
     line-height: 19.2px;
-  }
-
-  .page-events .intro-info .container::after {
-    display: none;
   }
 
   .page-events .intro-info .title {
