@@ -26,6 +26,10 @@ get_header(); ?>
     $events_cta_4_background = get_field('events_page_cta_4_background');
     $events_green_line_2_title = get_field('events_page_green_line_2_title');
     $events_green_line_2_list = get_field('events_page_green_line_2_list');
+    $events_conferences_title = get_field('events_page_conferences_title');
+    $events_conferences_description = get_field('events_page_conferences_description');
+    $events_conferences_gallery = get_field('events_page_conferences_gallery');
+    $events_conferences_text = get_field('events_page_conferences_text');
     ?>
     <section class="events-hero wow fadeIn"
              style="background-image: url(<?php echo $hero_bg ?>); background-size: cover; background-position: center;">
@@ -135,6 +139,102 @@ get_header(); ?>
             <?php endforeach; ?>
           </ul>
         <?php endif; ?>
+      </div>
+    </section>
+    <section class="text-image-block wow fadeIn">
+      <?php
+      $tib_title = get_field('events_page_text_and_image_block_title');
+      $tib_description = get_field('events_page_text_and_image_block_description');
+      $tib_image = get_field('events_page_text_and_image_block_image');
+      ?>
+      <div class="container">
+        <div class="flex">
+          <div class="content">
+            <h2 class="title wow fadeIn" data-wow-delay="0.2s"><?php echo $tib_title ?></h2>
+            <div class="description wow fadeIn" data-wow-delay="0.3s">
+              <?php echo $tib_description ?>
+            </div>
+          </div>
+          <div class="img-wrap wow fadeIn" data-wow-delay="0.1s">
+            <img class="hide-mobile" src="<?php echo $tib_image['url'] ?>" alt="">
+            <img class="hide-desktop" src="<?php echo $tib_image['url'] ?>" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="home-booking" style="background-image: url('<?php echo $events_cta_3_background; ?>')">
+      <?php
+      $title = get_field('events_page_booking_cta_title');
+      $item_1 = get_field('events_page_booking_cta_item_1');
+      $item_2 = get_field('events_page_booking_cta_item_2');
+      $item_3 = get_field('events_page_booking_cta_item_3');
+      $link = get_field('events_page_booking_link');
+      ?>
+      <div class="container wow fadeIn">
+        <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $title ?></h2>
+        <div class="items flex">
+          <div class="item wow fadeIn" data-wow-delay="0.2s">
+            <div class="number"><?php esc_html_e('01', 'partybaby'); ?></div>
+            <div class="item-content">
+              <div class="item-title"><?php echo $item_1['title'] ?></div>
+              <div class="item-text"><?php echo $item_1['description'] ?></div>
+            </div>
+          </div>
+          <div class="item wow fadeIn" data-wow-delay="0.3s">
+            <div class="number"><?php esc_html_e('02', 'partybaby'); ?></div>
+            <div class="item-content">
+              <div class="item-title"><?php echo $item_2['title'] ?></div>
+              <div class="item-text"><?php echo $item_2['description'] ?></div>
+            </div>
+          </div>
+          <div class="item wow fadeIn" data-wow-delay="0.4s">
+            <div class="number"><?php esc_html_e('03', 'partybaby'); ?></div>
+            <div class="item-content">
+              <div class="item-title"><?php echo $item_3['title'] ?></div>
+              <div class="item-text"><?php echo $item_3['description'] ?></div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-wrap wow fadeIn" data-wow-delay="0.5s">
+          <a href="<?php echo $link['url'] ?>" class="btn">
+            <div class="number"><?php echo $link['title'] ?></div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="events-conferences wow fadeIn">
+      <div class="container">
+        <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $events_conferences_title; ?></h2>
+        <div class="events-conferences-description wow fadeIn" data-wow-delay="0.2s">
+          <?php echo $events_conferences_description; ?>
+        </div>
+        <div class="events-conferences-gallery wow fadeIn" data-wow-delay="0.3s">
+          <div class="gallery-wrapper">
+            <?php
+
+            // Массив с подписями к изображениям (опционально)
+            //            $gallery_captions = array(
+            //              'Подпись к изображению 1',
+            //              'Подпись к изображению 2',
+            //              'Подпись к изображению 3',
+            //              'Подпись к изображению 4'
+            //            );
+
+            // Выводим изображения для галереи
+            foreach ($events_conferences_gallery as $index => $image_url) {
+              $caption = isset($gallery_captions[$index]) ? $gallery_captions[$index] : '';
+              ?>
+              <a href="<?php echo $image_url['url']; ?>" data-fancybox="gallery" data-caption="<?php echo $caption; ?>"
+                 class="gallery-item">
+                <img src="<?php echo $image_url['url']; ?>" alt="<?php echo $caption; ?>" class="gallery-image">
+              </a>
+            <?php } ?>
+          </div>
+
+        </div>
+        <div class="events-conferences-text" data-wow-delay="0.4s">
+          <?php echo $events_conferences_text; ?>
+        </div>
       </div>
     </section>
     <section class="home-packages-list wow fadeIn">
@@ -335,46 +435,7 @@ get_header(); ?>
         <p class="sign wow fadeIn" data-wow-delay="0.5s"><?php echo $sign ?></p>
       </div>
     </section>
-    <section class="home-booking" style="background-image: url('<?php echo $events_cta_3_background; ?>')">
-      <?php
-      $title = get_field('events_page_booking_cta_title');
-      $item_1 = get_field('events_page_booking_cta_item_1');
-      $item_2 = get_field('events_page_booking_cta_item_2');
-      $item_3 = get_field('events_page_booking_cta_item_3');
-      $link = get_field('events_page_booking_link');
-      ?>
-      <div class="container wow fadeIn">
-        <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $title ?></h2>
-        <div class="items flex">
-          <div class="item wow fadeIn" data-wow-delay="0.2s">
-            <div class="number"><?php esc_html_e('01', 'partybaby'); ?></div>
-            <div class="item-content">
-              <div class="item-title"><?php echo $item_1['title'] ?></div>
-              <div class="item-text"><?php echo $item_1['description'] ?></div>
-            </div>
-          </div>
-          <div class="item wow fadeIn" data-wow-delay="0.3s">
-            <div class="number"><?php esc_html_e('02', 'partybaby'); ?></div>
-            <div class="item-content">
-              <div class="item-title"><?php echo $item_2['title'] ?></div>
-              <div class="item-text"><?php echo $item_2['description'] ?></div>
-            </div>
-          </div>
-          <div class="item wow fadeIn" data-wow-delay="0.4s">
-            <div class="number"><?php esc_html_e('03', 'partybaby'); ?></div>
-            <div class="item-content">
-              <div class="item-title"><?php echo $item_3['title'] ?></div>
-              <div class="item-text"><?php echo $item_3['description'] ?></div>
-            </div>
-          </div>
-        </div>
-        <div class="btn-wrap wow fadeIn" data-wow-delay="0.5s">
-          <a href="<?php echo $link['url'] ?>" class="btn">
-            <div class="number"><?php echo $link['title'] ?></div>
-          </a>
-        </div>
-      </div>
-    </section>
+
     <section class="home-cta-2 wow fadeIn">
       <?php
       $cta2_bg = get_field('events_page_cta_bg_image');
@@ -386,27 +447,6 @@ get_header(); ?>
           <div class="text wow fadeIn" data-wow-delay="0.4s"><?php echo $cta2_description ?></div>
           <div class="btn-wrap wow fadeIn" data-wow-delay="0.5s">
             <a href="<?php echo $cta2_link['url'] ?>" class="btn"><?php echo $cta2_link['title'] ?></a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="text-image-block wow fadeIn">
-      <?php
-      $tib_title = get_field('events_page_text_and_image_block_title');
-      $tib_description = get_field('events_page_text_and_image_block_description');
-      $tib_image = get_field('events_page_text_and_image_block_image');
-      ?>
-      <div class="container">
-        <div class="flex">
-          <div class="content">
-            <h2 class="title wow fadeIn" data-wow-delay="0.2s"><?php echo $tib_title ?></h2>
-            <div class="description wow fadeIn" data-wow-delay="0.3s">
-              <?php echo $tib_description ?>
-            </div>
-          </div>
-          <div class="img-wrap wow fadeIn" data-wow-delay="0.1s">
-            <img class="hide-mobile" src="<?php echo $tib_image['url'] ?>" alt="">
-            <img class="hide-desktop" src="<?php echo $tib_image['url'] ?>" alt="">
           </div>
         </div>
       </div>

@@ -5386,18 +5386,20 @@ body {
   padding-bottom: 0;
 }
 
+.page-events .text-image-block .flex {
+  gap: 20px;
+}
+
 .page-events .text-image-block .content {
   padding-top: 0;
-  padding-right: 84px;
-  padding-left: 84px;
   font-family: Montserrat-Regular;
   font-size: 16px;
   line-height: 24px;
 }
 
 .page-events .text-image-block .content .title {
-  max-width: 510px;
-  margin-top: 67px;
+  /* max-width: 510px; */
+  margin-top: 0;
   margin-bottom: 44px;
   font-family: HarlowDuoSerifPlain;
   font-size: 46px;
@@ -5406,6 +5408,16 @@ body {
   color: #216F6D;
   text-align: left;
   letter-spacing: 0.03em;
+}
+
+.page-events .text-image-block .content .description {
+  padding-right: 84px;
+}
+
+.page-events .text-image-block .content .description em a {
+  font-weight: 500;
+  color: #216F6D;
+  text-decoration: none;
 }
 
 .page-events .text-image-block .content p {
@@ -5456,9 +5468,8 @@ body {
 
 .page-events .text-image-block .img-wrap {
   min-width: 500px;
-  height: 580px;
+  height: 100%;
   overflow: hidden;
-  transform: translateX(-64px);
 }
 
 .page-events .text-image-block .img-wrap img {
@@ -5468,6 +5479,88 @@ body {
   object-fit: cover;
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
+}
+
+.page-events .events-conferences {
+  padding-bottom: clamp(64px, 47.102px + 3.6735vw, 100px);
+}
+
+.page-events .events-conferences .title {
+  margin-bottom: clamp(12px, 6.3673px + 1.2245vw, 24px);
+  font-size: clamp(28px, 24.2449px + 0.8163vw, 36px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 50.4px */
+  color: #216F6D;
+  text-align: center;
+}
+
+.page-events .events-conferences .events-conferences-description {
+  max-width: 1072px;
+  margin: 0 auto clamp(24px, 18.3673px + 1.2245vw, 36px);
+  font-size: clamp(12px, 9.1837px + 0.6122vw, 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  color: #151515;
+  text-align: center;
+}
+
+.page-events .events-conferences-gallery .gallery-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+
+.page-events .events-conferences-gallery .gallery-item {
+  display: block;
+  width: 300px;
+  aspect-ratio: 25 / 19;
+  overflow: hidden;
+  border: 1px solid #DEE894;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.page-events .events-conferences-text {
+  max-width: 820px;
+  margin: clamp(24px, 18.3673px + 1.2245vw, 36px) auto 0;
+  font-size: clamp(12px, 10.1224px + 0.4082vw, 16px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  color: #605E5E;
+  text-align: center;
+}
+
+@media screen and (max-width: 1340px) {
+  .page-events .events-conferences-gallery .gallery-item {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-events .events-conferences-gallery .gallery-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .page-events .events-conferences-gallery .gallery-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+}
+
+.gallery-image,
+.fancybox-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .page-events .cta-bottom {
