@@ -24,6 +24,8 @@ get_header(); ?>
     $events_cta_4_text = get_field('events_page_cta_4_text');
     $events_cta_4_button = get_field('events_page_cta_4_link');
     $events_cta_4_background = get_field('events_page_cta_4_background');
+    $events_green_line_2_title = get_field('events_page_green_line_2_title');
+    $events_green_line_2_list = get_field('events_page_green_line_2_list');
     ?>
     <section class="events-hero wow fadeIn"
              style="background-image: url(<?php echo $hero_bg ?>); background-size: cover; background-position: center;">
@@ -109,6 +111,29 @@ get_header(); ?>
               </div>
             <?php endforeach; ?>
           </div>
+        <?php endif; ?>
+      </div>
+    </section>
+    <section class="green-line-2 wow fadeIn">
+      <div class="container">
+        <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $events_green_line_2_title; ?></h2>
+        <?php if (!empty($events_green_line_2_list)): ?>
+          <ul class="green-line-2-list wow fadeIn" data-wow-delay="0.2s">
+            <?php foreach ($events_green_line_2_list as $item):
+              $image = $item['image']; ?>
+              <li class="green-line-2-item">
+                <div class="green-line-2-item-img-wrapper">
+                  <img
+                      class="green-line-2-item-img"
+                      src="<?php echo $image['url']; ?>"
+                      alt="<?php echo $image['alt']; ?>"
+                      loading="lazy"
+                  >
+                </div>
+                <p class="green-line-2-item-text"><?php echo $item['text']; ?></p>
+              </li>
+            <?php endforeach; ?>
+          </ul>
         <?php endif; ?>
       </div>
     </section>
