@@ -7,6 +7,12 @@ $hero_bg = get_field('daycare_page_hero_background_image');
 $green_line_title = get_field('daycare_page_green_line_title');
 $green_line_title_value = get_field('daycare_page_green_line_title_value');
 $green_line_text = get_field('daycare_page_green_line_text');
+$celebrations_title = get_field('daycare_page_celebrations_title');
+$celebrations_subtitle = get_field('daycare_page_celebrations_subtitle');
+$celebrations_description = get_field('daycare_page_celebrations_description');
+$celebrations_list = get_field('daycare_page_celebrations_list');
+$celebrations_text = get_field('daycare_page_celebrations_text');
+$celebrations_link = get_field('daycare_page_celebrations_link');
 ?>
 <div class="page page-daycare">
   <section class="daycare-hero wow fadeIn"
@@ -31,6 +37,45 @@ $green_line_text = get_field('daycare_page_green_line_text');
       </div>
     <?php endif; ?>
 </div>
+</section>
+<section class="daycare-celebrations">
+  <div class="container decor">
+    <?php if ($celebrations_title): ?>
+      <h2 class="title"><?= $celebrations_title; ?></h2>
+    <?php endif; ?>
+    <?php if ($celebrations_subtitle): ?>
+      <p class="subtitle"><?= $celebrations_subtitle; ?></p>
+    <?php endif; ?>
+    <?php if ($celebrations_description): ?>
+      <div class="description"><?= $celebrations_description; ?></div>
+    <?php endif; ?>
+    <?php if (!empty($celebrations_list)): ?>
+      <ul class="list">
+        <?php foreach ($celebrations_list as $celebration):
+          $item_image = $celebration['image'];
+          $item_text = $celebration['text'];
+          ?>
+          <li class="item">
+            <img
+                class="item-image"
+                src="<?= $item_image['url']; ?>"
+                alt="<?= $item_image['alt']; ?>"
+                loading="lazy"
+            >
+            <p class="item-text"><?= $item_text; ?></p>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+    <?php endif; ?>
+    <?php if ($celebrations_text): ?>
+      <div class="text"><?= $celebrations_text; ?></div>
+    <?php endif; ?>
+    <?php if (!empty($celebrations_link)): ?>
+      <div class="btn-wrap">
+        <a class="btn" href="<?= $celebrations_link['url'] ?>"
+           target="<?= $celebrations_link['target'] ?>"><?= $celebrations_link['title']; ?></a></div>
+    <?php endif; ?>
+  </div>
 </section>
 </div>
 

@@ -18183,4 +18183,139 @@ input.wpcf7-form-control.wpcf7-file::after {
   text-align: center;
 }
 
+.page-daycare .daycare-celebrations {
+  padding-top: clamp(64px, 47.102px + 3.6735vw, 100px);
+  padding-bottom: clamp(64px, 47.102px + 3.6735vw, 100px);
+}
+
+.container.decor {
+  position: relative;
+}
+
+.container.decor::after {
+  position: absolute;
+  width: clamp(140px, 125.9184px + 3.0612vw, 170px);
+  height: clamp(72px, 65.4286px + 1.4286vw, 86px);
+  content: '';
+  background: url("img/home-hire.svg") center / cover no-repeat;
+}
+
+.page-daycare .daycare-celebrations .container.decor::after {
+  top: -60px;
+  left: clamp(200px, 127.2449px + 15.8163vw, 355px);
+}
+
+.page-daycare .daycare-celebrations .title,
+.page-daycare .daycare-celebrations .subtitle,
+.page-daycare .daycare-celebrations .description {
+  max-width: 865px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-daycare .daycare-celebrations .title {
+  font-size: clamp(24px, 18.3673px + 1.2245vw, 36px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 50.4px */
+  color: #216F6D;
+  text-align: center;
+}
+
+.page-daycare .daycare-celebrations .subtitle {
+  padding: 0;
+  margin: 0;
+  margin: 0 auto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: small-caps;
+  line-height: 150%; /* 24px */
+  color: #605E5E;
+  text-align: center;
+}
+
+.page-daycare .daycare-celebrations .description {
+  margin-top: clamp(24px, 35.7551px + -0.8163vw, 32px);
+  font-size: clamp(12px, 10.1224px + 0.4082vw, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  color: #151515;
+  text-align: center;
+}
+
+.page-daycare .daycare-celebrations .list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  padding: 0;
+  margin: 32px 0;
+  list-style: none;
+}
+
+@media screen and (max-width: 768px) {
+  .page-daycare .daycare-celebrations .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .page-daycare .daycare-celebrations .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.page-daycare .daycare-celebrations .item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  height: 100%;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.page-daycare .daycare-celebrations .item-image {
+  align-self: center;
+  width: 59px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page-daycare .daycare-celebrations .item-text {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  color: #151515;
+  text-align: center;
+}
+
+.page-daycare .daycare-celebrations .text {
+  max-width: 756px;
+  margin: 0 auto;
+  margin-bottom: clamp(32px, 24.4898px + 1.6327vw, 48px);
+  font-size: clamp(14px, 13.0612px + 0.2041vw, 16px);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  color: #216F6D;
+  text-align: center;
+}
+
+.page-daycare .daycare-celebrations .btn-wrap {
+  text-align: center;
+}
+
+.page-daycare .daycare-celebrations .btn {
+  width: fit-content;
+}
+
 /* ====================================== daycare partnerships page end   ======================================== */
