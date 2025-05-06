@@ -30,6 +30,11 @@ get_header(); ?>
     $events_conferences_description = get_field('events_page_conferences_description');
     $events_conferences_gallery = get_field('events_page_conferences_gallery');
     $events_conferences_text = get_field('events_page_conferences_text');
+    $events_green_yellow_line_title = get_field('events_page_green_yellow_line_title');
+    $events_title_decor_line_title = get_field('events_page_title_decor_line_title');
+    $events_title_decor_line_2_title = get_field('events_page_title_decor_line_2_title');
+    $events_form_title = get_field('events_page_form_title');
+    $events_form_description = get_field('events_page_form_description');
     ?>
     <section class="events-hero wow fadeIn"
              style="background-image: url(<?php echo $hero_bg ?>); background-size: cover; background-position: center;">
@@ -237,6 +242,11 @@ get_header(); ?>
         </div>
       </div>
     </section>
+    <section class="green-yellow-line wow fadeIn">
+      <div class="container">
+        <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $events_green_yellow_line_title; ?></h2>
+      </div>
+    </section>
     <section class="home-packages-list wow fadeIn">
       <div class="container">
         <div class="heading">
@@ -333,6 +343,11 @@ get_header(); ?>
         </div>
       </div>
     </section>
+    <section class="title-decor-line wow fadeIn">
+      <div class="container">
+        <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $events_title_decor_line_title; ?></h2>
+      </div>
+    </section>
     <section class="image-comparison wow fadeIn" data-component="image-comparison-slider">
       <?php
 
@@ -423,32 +438,28 @@ get_header(); ?>
         </div>
       </div>
     </section>
-    <section class="sign-info wow fadeIn">
-      <?php
-      $title = get_field('events_page_sign_info_title');
-      $subtitle = get_field('events_page_sign_info_subtitle');
-      $sign = get_field('events_page_sign_info_sign');
-      ?>
-      <div class="container">
-        <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $title ?></h2>
-        <p class="subtitle wow fadeIn" data-wow-delay="0.3s"><?php echo $subtitle ?></p>
-        <p class="sign wow fadeIn" data-wow-delay="0.5s"><?php echo $sign ?></p>
-      </div>
-    </section>
-
     <section class="home-cta-2 wow fadeIn">
       <?php
       $cta2_bg = get_field('events_page_cta_bg_image');
+      $cta2_title = get_field('events_page_cta_2_title');
       $cta2_description = get_field('events_page_cta_bg_description');
       $cta2_link = get_field('events_page_cta_bg_link');
       ?>
       <div class="box" style="background-image: url('<?php echo $cta2_bg ?>')">
         <div class="item wow fadeIn" data-wow-delay="0.2s">
+          <?php if ($cta2_title): ?>
+            <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $cta2_title; ?></h2>
+          <?php endif; ?>
           <div class="text wow fadeIn" data-wow-delay="0.4s"><?php echo $cta2_description ?></div>
           <div class="btn-wrap wow fadeIn" data-wow-delay="0.5s">
             <a href="<?php echo $cta2_link['url'] ?>" class="btn"><?php echo $cta2_link['title'] ?></a>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="title-decor-line-2 wow fadeIn">
+      <div class="container">
+        <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $events_title_decor_line_2_title; ?></h2>
       </div>
     </section>
     <section class="cta-bottom wow fadeIn">
@@ -466,7 +477,50 @@ get_header(); ?>
         </div>
       </div>
     </section>
-
+    <section class="sign-info wow fadeIn">
+      <?php
+      $title = get_field('events_page_sign_info_title');
+      $subtitle = get_field('events_page_sign_info_subtitle');
+      $sign = get_field('events_page_sign_info_sign');
+      ?>
+      <div class="container">
+        <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $title ?></h2>
+        <p class="subtitle wow fadeIn" data-wow-delay="0.3s"><?php echo $subtitle ?></p>
+        <p class="sign wow fadeIn" data-wow-delay="0.5s"><?php echo $sign ?></p>
+      </div>
+    </section>
+    <section class="events-form" id="events-form">
+      <div class="container">
+        <div class="innerWrap">
+          <div class="titleBlock">
+            <?php if ($events_form_title): ?>
+              <h2 class="section-title"><?php echo $events_form_title; ?></h2>
+            <?php endif; ?>
+            <?php if ($events_form_description): ?>
+              <div class="description"><?php echo $events_form_description; ?></div>
+            <?php endif; ?>
+          </div>
+          <div class="hb-p-62b618fe3cd6df00081819e8-15"></div>
+          <img height="1" width="1" style="display:none"
+               src="https://www.honeybook.com/p.png?pid=62b618fe3cd6df00081819e8">
+          <script>
+            (function (h, b, s, n, i, p, e, t) {
+              h._HB_ = h._HB_ || {};
+              h._HB_.pid = i;
+              ;
+              ;
+              ;
+              t = b.createElement(s);
+              t.type = "text/javascript";
+              t.async = !0;
+              t.src = n;
+              e = b.getElementsByTagName(s)[0];
+              e.parentNode.insertBefore(t, e);
+            })(window, document, "script", "https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js", "62b618fe3cd6df00081819e8");
+          </script>
+        </div>
+      </div>
+    </section>
     <?php get_template_part('template-parts/instagram-feed-5'); ?>
     <?php get_template_part('template-parts/subscribe-form'); ?>
   </div>
