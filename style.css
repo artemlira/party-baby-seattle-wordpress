@@ -5354,7 +5354,7 @@ body {
 
 .page-events .events-form {
   padding: clamp(32px, 16.9796px + 3.2653vw, 64px) clamp(0px, -39.4286px + 8.5714vw, 84px);
-  background: url("img/events-form-bg.png") center / cover no-repeat;
+  background: url("img/events-form-bg.jpeg") center / cover no-repeat;
 }
 
 .page-events .events-form .innerWrap {
@@ -18092,3 +18092,77 @@ input.wpcf7-form-control.wpcf7-file::after {
     width: 100%;
   }
 }
+
+/* ====================================== daycare partnerships page start ======================================== */
+.page-daycare .daycare-hero {
+  position: relative;
+  height: 572px;
+}
+
+.page-daycare .daycare-hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  content: '';
+  background: linear-gradient(90deg, #FFF 6%, rgb(255 255 255 / 63%) 54.66%, rgb(255 255 255 / 0%) 100%);
+}
+
+.page-daycare .daycare-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .page-daycare .daycare-hero::after {
+    background: linear-gradient(90deg, #FFF 11.5%, rgb(255 255 255 / 78%) 59%, rgb(255 255 255 / 56%) 73%, rgb(255 255 255 / 0%) 100%);
+  }
+
+  .page-daycare .daycare-hero .container {
+    padding-right: clamp(10px, -147.1429px + 49.1071vw, 230px);
+  }
+}
+
+.page-daycare .daycare-hero .title {
+  position: relative;
+  z-index: 2;
+  max-width: 710px;
+  padding-top: 137px;
+  margin: 0;
+  font-size: clamp(28px, 14.8571px + 2.8571vw, 56px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: #216F6D;
+  letter-spacing: 0.03em;
+}
+
+.page-daycare .subtitle-2 {
+  padding: 0;
+  margin: 0;
+  font-size: clamp(16px, 14.1224px + 0.4082vw, 20px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 28px */
+  color: #151515;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.page-daycare .bianka {
+  margin-top: clamp(18px, 38.5714px + -1.4286vw, 32px);
+  margin-bottom: 24px;
+  font-size: clamp(48px, 40.4898px + 1.6327vw, 64px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 89.6px */
+  color: #4DC3B5;
+  letter-spacing: 1.28px;
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: var(--Primary-sky-dark, #4DC3B5);
+}
+
+.page-daycare .daycare-hero .btn {
+  padding: 12px 24px;
+}
+
+/* ====================================== daycare partnerships page end   ======================================== */
