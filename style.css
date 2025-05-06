@@ -18165,4 +18165,22 @@ input.wpcf7-form-control.wpcf7-file::after {
   padding: 12px 24px;
 }
 
+.page-daycare .daycare-green-line {
+  padding-top: 27px;
+  padding-bottom: 27px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='120' viewBox='0 0 1440 120' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M71.6998 464.501C147.452 247.717 450.232 228.657 762.28 409.287C1196.96 660.902 996.618 -28.5088 1404.49 293.079L1777.5 364.27C1054.3 -423.079 873 332 435 65.5C58.9663 -152.169 -86.2474 -61.9235 -54.3023 296.922L71.6998 464.501Z' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E") center / cover no-repeat, #216F6D;
+}
+
+.page-daycare .daycare-green-line .text {
+  max-width: 803px;
+  margin: 0 auto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: small-caps;
+  line-height: 140%; /* 22.4px */
+  color: #FFF;
+  text-align: center;
+}
+
 /* ====================================== daycare partnerships page end   ======================================== */

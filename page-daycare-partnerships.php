@@ -4,6 +4,9 @@ $hero_subtitle = get_field('daycare_page_hero_subtitle');
 $hero_description = get_field('daycare_page_hero_description');
 $hero_link = get_field('daycare_page_hero_button');
 $hero_bg = get_field('daycare_page_hero_background_image');
+$green_line_title = get_field('daycare_page_green_line_title');
+$green_line_title_value = get_field('daycare_page_green_line_title_value');
+$green_line_text = get_field('daycare_page_green_line_text');
 ?>
 <div class="page page-daycare">
   <section class="daycare-hero wow fadeIn"
@@ -16,6 +19,19 @@ $hero_bg = get_field('daycare_page_hero_background_image');
          data-wow-delay="0.3s"><?php echo $hero_link['title'] ?></a>
     </div>
   </section>
+  <section class="daycare-green-line wow fadeIn">
+    <div class="container">
+      <?php if ($green_line_title): ?>
+      <<?= $green_line_title_value; ?> class="title wow fadeIn"
+      data-wow-delay="0.1s"><?php echo $green_line_title; ?></<?= $green_line_title_value; ?>>
+    <?php endif; ?>
+    <?php if ($green_line_text): ?>
+      <div class="text">
+        <?= $green_line_text; ?>
+      </div>
+    <?php endif; ?>
+</div>
+</section>
 </div>
 
 <?php get_template_part('template-parts/subscribe-form'); ?>
