@@ -13,6 +13,12 @@ $celebrations_description = get_field('daycare_page_celebrations_description');
 $celebrations_list = get_field('daycare_page_celebrations_list');
 $celebrations_text = get_field('daycare_page_celebrations_text');
 $celebrations_link = get_field('daycare_page_celebrations_link');
+$instagram_video_title = get_field('daycare_page_instagram_video_title');
+$instagram_video_subtitle = get_field('daycare_page_instagram_video_subtitle');
+$instagram_video_description = get_field('daycare_page_instagram_video_description');
+$instagram_video_text = get_field('daycare_page_instagram_video_text');
+$instagram_video_bg = get_field('daycare_page_instagram_video_bg');
+$instagram_video_video = get_field('daycare_page_instagram_video_video');
 ?>
 <div class="page page-daycare">
   <section class="daycare-hero wow fadeIn"
@@ -36,6 +42,8 @@ $celebrations_link = get_field('daycare_page_celebrations_link');
         <?= $green_line_text; ?>
       </div>
     <?php endif; ?>
+
+
 </div>
 </section>
 <section class="daycare-celebrations">
@@ -76,6 +84,29 @@ $celebrations_link = get_field('daycare_page_celebrations_link');
            target="<?= $celebrations_link['target'] ?>"><?= $celebrations_link['title']; ?></a></div>
     <?php endif; ?>
   </div>
+</section>
+<section class="daycare-instagram-video"
+         style='background:url("<?php echo $instagram_video_bg; ?>") center / cover no-repeat;'>
+  <div class="container decor">
+    <div class="phone-container">
+      <video class="phone-video" controls muted loop autoplay>
+        <source src="<?php echo get_template_directory_uri() ?>/video/Copy_of_Reel_10_11.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="content">
+      <h2 class="title"><?= $instagram_video_title; ?></h2>
+      <p class="subtitle"><?= $instagram_video_subtitle; ?></p>
+      <div class="description"><?= $instagram_video_description; ?></div>
+      <p class="text"><?= $instagram_video_text; ?></p>
+    </div>
+  </div>
+  <script>
+    const video = document.querySelector('.phone-video');
+    video.addEventListener('error', () => {
+      console.error('Ошибка загрузки видео:', video.error);
+    });
+  </script>
 </section>
 </div>
 

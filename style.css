@@ -1337,14 +1337,14 @@ body {
 
 .site-header .main-navigation .sub-menu .menu-item a {
   width: 100%;
-  font-family: EngraversGothicBT-Regulal;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 1.6;
   letter-spacing: 0.7px;
 }
 
 .site-header li#menu-item-11::after,
-.site-header li#menu-item-2109::after {
+.site-header li#menu-item-2109::after,
+.site-header li#menu-item-3166::after {
   position: relative;
   top: 6px;
   left: -3px;
@@ -1360,7 +1360,8 @@ body {
 }
 
 .site-header li#menu-item-11:hover::after,
-.site-header li#menu-item-2109:hover::after {
+.site-header li#menu-item-2109:hover::after,
+.site-header li#menu-item-3166:hover::after {
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 7L0 1.0636L1.075 0L6 4.87279L10.925 0L12 1.0636L6 7Z' fill='%235F9392'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: cover;
@@ -2540,6 +2541,14 @@ body {
   background: #FAFAFA;
 }
 
+.page-events .home-testimonials {
+  background: initial;
+}
+
+#sb-reviews-container-1 [data-post-style="regular"] .sb-post-item-wrap {
+  border-bottom: none !important;
+}
+
 .home-testimonials .title {
   margin-top: 0;
   margin-bottom: 12px;
@@ -2811,7 +2820,7 @@ body {
   position: relative;
   max-width: 1120px;
   padding: clamp(32px, 43.7551px + -0.8163vw, 40px) 28px clamp(40px, 34.3673px + 1.2245vw, 52px);
-  background: rgb(255 255 255 / 90%);
+  background: rgb(255 255 255 / 80%);
   backdrop-filter: blur(3px);
   border-radius: 12px;
 }
@@ -2846,6 +2855,7 @@ body {
 
 .home-booking .item .number {
   display: flex;
+  flex: 1 0 67px;
   align-items: center;
   justify-content: center;
   width: 67px;
@@ -2911,6 +2921,7 @@ body {
 .home-packages-list .subtitle {
   margin-top: 0;
   margin-bottom: 12px;
+  font-family: "Sweet Sans Pro";
   font-size: 16px;
   font-weight: 400;
   color: #605E5E;
@@ -3453,6 +3464,10 @@ body {
   color: #216F6D;
   text-align: center;
   text-transform: uppercase;
+}
+
+.page-events .subscription-form .container .formkit-form h2 {
+  text-transform: initial;
 }
 
 .subscription-form .container .formkit-form .formkit-subheader p {
@@ -5149,7 +5164,8 @@ body {
   max-width: 365px;
   margin: 0 auto;
   margin-bottom: 57px;
-  font-size: 16px;
+  font-family: "Sweet Sans Pro";
+  font-size: clamp(14px, 13.0612px + 0.2041vw, 16px);
   font-weight: 400;
   line-height: 24px;
   color: #605E5E;
@@ -5261,6 +5277,11 @@ body {
   .page-events .green-line-2 .container::after {
     top: 50px;
     right: 0;
+  }
+
+  .page-events .green-line-2 .title {
+    max-width: 300px;
+    margin: 0 auto 40px;
   }
 }
 
@@ -5526,7 +5547,7 @@ body {
 }
 
 .page-events .events-conferences {
-  padding-bottom: clamp(64px, 47.102px + 3.6735vw, 100px);
+  padding-bottom: clamp(24px, 16.4898px + 1.6327vw, 40px);
 }
 
 .page-events .events-conferences .container {
@@ -5672,6 +5693,10 @@ body {
   .page-events .title-decor-line .container::after {
     content: none;
   }
+
+  .page-events .green-yellow-line .title span {
+    display: block;
+  }
 }
 
 .page-events .title-decor-line .title {
@@ -5745,12 +5770,12 @@ body {
 
 
 .page-events .cta-bottom .bianka {
-  padding: 0 30px;
+  padding: 0 clamp(18px, 12.3673px + 1.2245vw, 30px);
   margin-top: 0;
   margin-bottom: 38px;
-  font-size: 56px;
+  font-size: clamp(28px, 14.8571px + 2.8571vw, 56px);
   font-weight: 500;
-  line-height: 78.4px;
+  line-height: 1.4;
   color: #216F6D;
   text-align: center;
   letter-spacing: 0.03em;
@@ -5759,8 +5784,8 @@ body {
 .page-events .cta-bottom .box {
   padding-top: 100px;
   padding-bottom: 100px;
-  background: url("img/home-cta-2.jpg");
-  background-position: top center;
+  background: url("img/home-cta-2-1.jpg");
+  background-position: bottom center;
   background-size: cover;
 }
 
@@ -11489,6 +11514,10 @@ input.wpcf7-form-control.wpcf7-file::after {
     padding: 0 10px;
   }
 
+  .page-events .home-booking .item .item-title {
+    padding: 0;
+  }
+
   .page-events .text-image-block .content {
     padding-left: 0;
   }
@@ -12367,6 +12396,7 @@ input.wpcf7-form-control.wpcf7-file::after {
 
   .home-packages-list .subtitle {
     margin-bottom: 17px;
+    font-family: "Sweet Sans Pro";
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -12401,6 +12431,7 @@ input.wpcf7-form-control.wpcf7-file::after {
     height: 280px;
     margin: 0 auto;
     margin-bottom: 14px;
+    border-bottom: none;
   }
 
   .packages-list .package-item .package-image img {
@@ -14083,10 +14114,9 @@ input.wpcf7-form-control.wpcf7-file::after {
   }
 
   .page-events .text-image-block .content .title {
-    margin-top: 64px;
     margin-bottom: 13px;
     font-size: 28px;
-    line-height: 39.2px;
+    line-height: 1.4;
     text-align: center;
   }
 
@@ -17982,6 +18012,24 @@ input.wpcf7-form-control.wpcf7-file::after {
   transform: translate(-50%, -50%) scale(1, 1) !important;
 }
 
+.page-template-template-events .fancybox-content {
+  max-width: 876px !important;
+  max-height: 505px !important;
+  aspect-ratio: 876 / 505 !important;
+  overflow: hidden;
+  border-radius: 12px !important;
+}
+
+.page-template-template-events .fancybox-image {
+  width: 100%;
+  max-width: 876px;
+  max-height: 505px;
+  aspect-ratio: 876 / 505;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px !important;
+}
+
 .fancybox-custom-container {
   width: 100%;
   height: 100%;
@@ -18316,6 +18364,154 @@ input.wpcf7-form-control.wpcf7-file::after {
 
 .page-daycare .daycare-celebrations .btn {
   width: fit-content;
+}
+
+.page-daycare .daycare-instagram-video {
+  position: relative;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.page-daycare .daycare-instagram-video::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: linear-gradient(90deg, #FFF 0%, rgb(255 255 255 / 92%) 38.7%, rgb(255 255 255 / 21%) 83.25%);
+}
+
+.page-daycare .daycare-instagram-video .container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 48px;
+  background: url("img/Worldkids1.png") bottom right / 210px 145px no-repeat;
+}
+
+.page-daycare .daycare-instagram-video .container::before {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  z-index: 2;
+  width: clamp(40px, 25.9184px + 3.0612vw, 70px);
+  height: clamp(42px, 26.9796px + 3.2653vw, 74px);
+  content: '';
+  background: url("img/instagram.svg") center / cover no-repeat;
+}
+
+
+.page-daycare .container.decor::after {
+  left: 230px;
+}
+
+.page-daycare .daycare-instagram-video .phone-container {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 251px;
+  width: 251px;
+  height: 486px;
+  padding: 1%;
+  overflow: hidden;
+  border-radius: 65px;
+}
+
+.page-daycare .daycare-instagram-video .phone-video {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.page-daycare .daycare-instagram-video .phone-container::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  content: '';
+  background: url("img/phone-frame.png") center / cover no-repeat;
+  transform: translate(-50%, -50%);
+}
+
+.page-daycare .daycare-instagram-video .content {
+  padding-top: 69px;
+}
+
+.page-daycare .daycare-instagram-video .title {
+  padding: 0;
+  margin: 0;
+  font-size: clamp(24px, 14.6122px + 2.0408vw, 44px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 66px */
+  color: #216F6D;
+}
+
+.page-daycare .daycare-instagram-video .subtitle {
+  margin: 0 0 clamp(16px, 12.2449px + 0.8163vw, 24px);
+  font-size: clamp(14px, 16.9388px + -0.2041vw, 16px);
+  font-style: normal;
+  font-weight: 400;
+  font-variant: small-caps;
+  line-height: 140%; /* 19.6px */
+  color: #363636;
+}
+
+.page-daycare .daycare-instagram-video .description {
+  max-width: 530px;
+  margin: 0 0 clamp(16px, 12.2449px + 0.8163vw, 24px);
+  font-size: clamp(12px, 11.0612px + 0.2041vw, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 162%; /* 22.68px */
+  color: #151515;
+}
+
+.page-daycare .daycare-instagram-video .text {
+  max-width: 530px;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 150%; /* 18px */
+  color: #5F9392;
+}
+
+@media screen and (max-width: 998px) {
+  .page-daycare .daycare-instagram-video .container {
+    background: initial;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-daycare .daycare-instagram-video::after {
+    background: linear-gradient(180deg, #FFF 0%, rgb(255 255 255 / 74%) 41.73%, rgb(255 255 255 / 50%) 100%);
+  }
+
+  .page-daycare .daycare-instagram-video .container {
+    flex-direction: column-reverse;
+  }
+
+  .page-daycare .container.decor::after {
+    top: 48%;
+    left: 60%;
+    z-index: 1;
+  }
+
+  .page-daycare .daycare-instagram-video .container::before {
+    top: 0;
+    right: 50%;
+    left: initial;
+    transform: translateX(50%);
+  }
+
+  .page-daycare .daycare-instagram-video .phone-container {
+    flex: 1 1 auto;
+    padding: 22px;
+    margin: 0 auto;
+  }
 }
 
 /* ====================================== daycare partnerships page end   ======================================== */
