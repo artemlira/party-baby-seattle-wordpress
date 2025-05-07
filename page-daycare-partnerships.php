@@ -25,6 +25,13 @@ $sensory_play_description = get_field('daycare_page_sensory_play_description');
 $sensory_play_list = get_field('daycare_page_sensory_play_list');
 $sensory_play_text = get_field('daycare_page_sensory_play_text');
 $sensory_play_link = get_field('daycare_page_sensory_play_link');
+$graduation_header_text = get_field('daycare_page_graduation_header_text');
+$graduation_title = get_field('daycare_page_graduation_title');
+$graduation_text = get_field('daycare_page_graduation_text');
+$graduation_quote = get_field('daycare_page_graduation_quote');
+$graduation_quote_signature = get_field('daycare_page_graduation_quote_signature');
+$graduation_quote_author = get_field('daycare_page_graduation_quote_author');
+$graduation_image = get_field('daycare_page_graduation_image');
 ?>
 <div class="page page-daycare">
   <section class="daycare-hero wow fadeIn"
@@ -114,6 +121,39 @@ $sensory_play_link = get_field('daycare_page_sensory_play_link');
     });
   </script>
 </section>
+<section class="daycare-graduation wow fadeIn">
+  <header class="daycare-graduation-header">
+    <div class="container">
+      <p class="daycare-graduation-header-text wow fadeIn"
+         data-wow-delay="0.1s"><?= $graduation_header_text; ?></p>
+    </div>
+  </header>
+  <div class="container">
+    <div class="content">
+      <h2 class="title wow fadeIn" data-wow-delay="0.2s"><?= $graduation_title; ?></h2>
+      <p class="text wow fadeIn" data-wow-delay="0.3s"><?= $graduation_text; ?></p>
+      <div class="quote-wrapper">
+        <div class="quote"><?= $graduation_quote; ?></div>
+        <div class="quote-signature">
+          <img
+              class="quote-image"
+              src="<?= $graduation_quote_signature['url']; ?>"
+              alt="<?= $graduation_quote_signature['alt']; ?>"
+              loading="lazy"
+          >
+          <p class="signature-author"><?= $graduation_quote_author; ?></p>
+        </div>
+      </div>
+    </div>
+    <div class="image-wrap">
+      <img
+          src="<?= $graduation_image['url']; ?>"
+          alt="<?= $graduation_image['alt']; ?>"
+          loading="lazy"
+      >
+    </div>
+  </div>
+</section>
 <section class="daycare-sensory-play wow fadeIn">
   <div class="container decor">
     <?php if ($sensory_play_title): ?>
@@ -153,6 +193,7 @@ $sensory_play_link = get_field('daycare_page_sensory_play_link');
     <?php endif; ?>
   </div>
 </section>
+
 
 </div>
 

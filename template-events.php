@@ -42,7 +42,7 @@ get_header(); ?>
         <h1 class="title  wow fadeIn" data-wow-delay="0.1s"><?php echo $hero_title ?></h1>
         <div class="bianka  wow fadeIn" data-wow-delay="0.2s"><?php echo $hero_subtitle ?></div>
         <h2 class="title subtitle-2 wow fadeIn" data-wow-delay="0.3s"><?php echo $hero_description ?></h2>
-        <a href="<?php echo $hero_link['url'] ?>" class="btn wow fadeIn"
+        <a href="<?php echo $hero_link['url'] ?>" target="<?php echo $hero_link['target']; ?>" class="btn wow fadeIn"
            data-wow-delay="0.4s"><?php echo $hero_link['title'] ?></a>
       </div>
     </section>
@@ -452,7 +452,8 @@ get_header(); ?>
           <?php endif; ?>
           <div class="text wow fadeIn" data-wow-delay="0.4s"><?php echo $cta2_description ?></div>
           <div class="btn-wrap wow fadeIn" data-wow-delay="0.5s">
-            <a href="<?php echo $cta2_link['url'] ?>" class="btn"><?php echo $cta2_link['title'] ?></a>
+            <a href="<?php echo $cta2_link['url'] ?>" target="<?php echo $cta2_link['target']; ?>"
+               class="btn"><?php echo $cta2_link['title'] ?></a>
           </div>
         </div>
       </div>
