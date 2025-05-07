@@ -19,6 +19,12 @@ $instagram_video_description = get_field('daycare_page_instagram_video_descripti
 $instagram_video_text = get_field('daycare_page_instagram_video_text');
 $instagram_video_bg = get_field('daycare_page_instagram_video_bg');
 $instagram_video_video = get_field('daycare_page_instagram_video_video');
+$sensory_play_title = get_field('daycare_page_sensory_play_title');
+$sensory_play_subtitle = get_field('daycare_page_sensory_play_subtitle');
+$sensory_play_description = get_field('daycare_page_sensory_play_description');
+$sensory_play_list = get_field('daycare_page_sensory_play_list');
+$sensory_play_text = get_field('daycare_page_sensory_play_text');
+$sensory_play_link = get_field('daycare_page_sensory_play_link');
 ?>
 <div class="page page-daycare">
   <section class="daycare-hero wow fadeIn"
@@ -38,7 +44,7 @@ $instagram_video_video = get_field('daycare_page_instagram_video_video');
       data-wow-delay="0.1s"><?php echo $green_line_title; ?></<?= $green_line_title_value; ?>>
     <?php endif; ?>
     <?php if ($green_line_text): ?>
-      <div class="text">
+      <div class="text wow fadeIn" data-wow-delay="0.2s">
         <?= $green_line_text; ?>
       </div>
     <?php endif; ?>
@@ -46,19 +52,19 @@ $instagram_video_video = get_field('daycare_page_instagram_video_video');
 
 </div>
 </section>
-<section class="daycare-celebrations">
+<section class="daycare-celebrations wow fadeIn">
   <div class="container decor">
     <?php if ($celebrations_title): ?>
-      <h2 class="title"><?= $celebrations_title; ?></h2>
+      <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?= $celebrations_title; ?></h2>
     <?php endif; ?>
     <?php if ($celebrations_subtitle): ?>
-      <p class="subtitle"><?= $celebrations_subtitle; ?></p>
+      <p class="subtitle wow fadeIn" data-wow-delay="0.2s"><?= $celebrations_subtitle; ?></p>
     <?php endif; ?>
     <?php if ($celebrations_description): ?>
-      <div class="description"><?= $celebrations_description; ?></div>
+      <div class="description wow fadeIn" data-wow-delay="0.3s"><?= $celebrations_description; ?></div>
     <?php endif; ?>
     <?php if (!empty($celebrations_list)): ?>
-      <ul class="list">
+      <ul class="list wow fadeIn" data-wow-delay="0.4s">
         <?php foreach ($celebrations_list as $celebration):
           $item_image = $celebration['image'];
           $item_text = $celebration['text'];
@@ -76,25 +82,25 @@ $instagram_video_video = get_field('daycare_page_instagram_video_video');
       </ul>
     <?php endif; ?>
     <?php if ($celebrations_text): ?>
-      <div class="text"><?= $celebrations_text; ?></div>
+      <div class="text wow fadeIn" data-wow-delay="0.5s"><?= $celebrations_text; ?></div>
     <?php endif; ?>
     <?php if (!empty($celebrations_link)): ?>
-      <div class="btn-wrap">
+      <div class="btn-wrap wow fadeIn" data-wow-delay="0.6s">
         <a class="btn" href="<?= $celebrations_link['url'] ?>"
            target="<?= $celebrations_link['target'] ?>"><?= $celebrations_link['title']; ?></a></div>
     <?php endif; ?>
   </div>
 </section>
-<section class="daycare-instagram-video"
+<section class="daycare-instagram-video wow fadeIn"
          style='background:url("<?php echo $instagram_video_bg; ?>") center / cover no-repeat;'>
   <div class="container decor">
-    <div class="phone-container">
+    <div class="phone-container wow fadeIn" data-wow-delay="0.1s">
       <video class="phone-video" controls muted loop autoplay>
         <source src="<?php echo get_template_directory_uri() ?>/video/Copy_of_Reel_10_11.mp4" type="video/mp4">
       </video>
     </div>
 
-    <div class="content">
+    <div class="content wow fadeIn" data-wow-delay="0.2s">
       <h2 class="title"><?= $instagram_video_title; ?></h2>
       <p class="subtitle"><?= $instagram_video_subtitle; ?></p>
       <div class="description"><?= $instagram_video_description; ?></div>
@@ -108,6 +114,46 @@ $instagram_video_video = get_field('daycare_page_instagram_video_video');
     });
   </script>
 </section>
+<section class="daycare-sensory-play wow fadeIn">
+  <div class="container decor">
+    <?php if ($sensory_play_title): ?>
+      <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?= $sensory_play_title; ?></h2>
+    <?php endif; ?>
+    <?php if ($sensory_play_subtitle): ?>
+      <p class="subtitle wow fadeIn" data-wow-delay="0.2s"><?= $sensory_play_subtitle; ?></p>
+    <?php endif; ?>
+    <?php if ($sensory_play_description): ?>
+      <div class="description wow fadeIn" data-wow-delay="0.3s"><?= $sensory_play_description; ?></div>
+    <?php endif; ?>
+    <?php if (!empty($sensory_play_list)): ?>
+      <ul class="list wow fadeIn" data-wow-delay="0.4s">
+        <?php foreach ($sensory_play_list as $item):
+          $item_image = $item['image'];
+          $item_text = $item['text'];
+          ?>
+          <li class="item">
+            <img
+                class="item-image"
+                src="<?= $item_image['url']; ?>"
+                alt="<?= $item_image['alt']; ?>"
+                loading="lazy"
+            >
+            <p class="item-text"><?= $item_text; ?></p>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+    <?php endif; ?>
+    <?php if ($sensory_play_text): ?>
+      <div class="text wow fadeIn" data-wow-delay="0.5s"><?= $sensory_play_text; ?></div>
+    <?php endif; ?>
+    <?php if (!empty($sensory_play_link)): ?>
+      <div class="btn-wrap wow fadeIn" data-wow-delay="0.6s">
+        <a class="btn" href="<?= $sensory_play_link['url'] ?>"
+           target="<?= $sensory_play_link['target'] ?>"><?= $sensory_play_link['title']; ?></a></div>
+    <?php endif; ?>
+  </div>
+</section>
+
 </div>
 
 <?php get_template_part('template-parts/subscribe-form'); ?>
