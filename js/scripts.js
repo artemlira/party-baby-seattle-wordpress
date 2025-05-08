@@ -1310,3 +1310,69 @@ function init(element) {
 }
 
 init(imageComparisonSlider);
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Обработчики для всех видео превью
+  document.querySelectorAll('.daycare-video-preview').forEach(preview => {
+    const videoId = preview.dataset.videoId;
+    const modal = document.getElementById(`modal-${videoId}`);
+
+    // Клик по кнопке воспроизведения
+    preview.querySelector('.daycare-video-play-button').addEventListener('click', () => {
+      openVideoModal(videoId);
+    });
+
+    // Клик по кнопке закрытия
+    modal.querySelector('.daycare-video-close-button').addEventListener('click', () => {
+      closeVideoModal(videoId);
+    });
+
+    // Клик по оверлею
+    modal.querySelector('.daycare-video-modal-overlay').addEventListener('click', () => {
+      closeVideoModal(videoId);
+    });
+  });
+
+  // Закрытие по ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const activeModal = document.querySelector('.daycare-video-modal.active');
+      if (activeModal) {
+        const videoId = activeModal.id.replace('modal-', '');
+        closeVideoModal(videoId);
+      }
+    }
+  });
+});
+
+function openVideoModal(videoId) {
+  const modal = document.getElementById(`modal-${videoId}`);
+  const playerContainer = document.getElementById(`player-container-${videoId}`);
+
+  // Создаем iframe
+  const iframe = document.createElement('iframe');
+  iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&rel=0&modestbranding=1`);
+  iframe.setAttribute('frameborder', '0');
+  iframe.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture');
+  iframe.setAttribute('allowfullscreen', '');
+
+  // Очищаем контейнер и добавляем iframe
+  playerContainer.innerHTML = '';
+  playerContainer.appendChild(iframe);
+
+  // Показываем модалку
+  modal.classList.add('active');
+  document.body.classList.add('modal-open');
+}
+
+function closeVideoModal(videoId) {
+  const modal = document.getElementById(`modal-${videoId}`);
+  const playerContainer = document.getElementById(`player-container-${videoId}`);
+
+  // Очищаем плеер
+  playerContainer.innerHTML = '';
+
+  // Скрываем модалку
+  modal.classList.remove('active');
+  document.body.classList.remove('modal-open');
+}

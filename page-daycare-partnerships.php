@@ -32,6 +32,11 @@ $graduation_quote = get_field('daycare_page_graduation_quote');
 $graduation_quote_signature = get_field('daycare_page_graduation_quote_signature');
 $graduation_quote_author = get_field('daycare_page_graduation_quote_author');
 $graduation_image = get_field('daycare_page_graduation_image');
+$video_title = get_field('daycare_page_video_title');
+$video_description = get_field('daycare_page_video_description');
+$video_text = get_field('daycare_page_video_text');
+$video_url = get_field('daycare_page_video_youtube_url');
+$video_thumbnail = get_field('daycare_page_video_thumbnail');
 ?>
 <div class="page page-daycare">
   <section class="daycare-hero wow fadeIn"
@@ -132,7 +137,7 @@ $graduation_image = get_field('daycare_page_graduation_image');
     <div class="content">
       <h2 class="title wow fadeIn" data-wow-delay="0.2s"><?= $graduation_title; ?></h2>
       <p class="text wow fadeIn" data-wow-delay="0.3s"><?= $graduation_text; ?></p>
-      <div class="quote-wrapper">
+      <div class="quote-wrapper wow fadeIn" data-wow-delay="0.3s">
         <div class="quote"><?= $graduation_quote; ?></div>
         <div class="quote-signature">
           <img
@@ -191,6 +196,54 @@ $graduation_image = get_field('daycare_page_graduation_image');
         <a class="btn" href="<?= $sensory_play_link['url'] ?>"
            target="<?= $sensory_play_link['target'] ?>"><?= $sensory_play_link['title']; ?></a></div>
     <?php endif; ?>
+  </div>
+</section>
+<section class="daycare-video wow fadeIn">
+  <div class="container">
+    <div class="flex">
+      <div class="col-50">
+        <div class="content wow fadeIn" data-wow-delay="0.1s">
+          <h2 class="title"><?php echo $video_title; ?></h2>
+          <p class="description"><?php echo $video_description; ?></p>
+          <p class="text"><?php echo $video_text; ?></p>
+        </div>
+      </div>
+      <div class="col-50">
+        <?php if ($video_url) :
+          $video_id = '';
+          if (preg_match('/(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $video_url, $matches)) {
+            $video_id = $matches[1];
+          }
+
+          if (!empty($video_thumbnail)) {
+            $thumbnail_url = $video_thumbnail['url'];
+          } else {
+            $thumbnail_url = "https://img.youtube.com/vi/{$video_id}/maxresdefault.jpg";
+          }
+          ?>
+          <div class="daycare-video-wrapper">
+            <!-- Превью видео -->
+            <div class="daycare-video-preview" data-video-id="<?php echo esc_attr($video_id); ?>">
+              <div class="daycare-video-rounded-thumbnail"
+                   style="background-image: url('<?php echo esc_url($thumbnail_url); ?>')">
+                <button class="daycare-video-play-button" aria-label="Play video"></button>
+              </div>
+            </div>
+
+            <!-- Модальное окно -->
+            <div class="daycare-video-modal" id="modal-<?php echo esc_attr($video_id); ?>">
+              <div class="daycare-video-modal-overlay"></div>
+              <div class="daycare-video-modal-content">
+                <button class="daycare-video-close-button" aria-label="Close">&times;</button>
+                <div class="daycare-video-player-container"
+                     id="player-container-<?php echo esc_attr($video_id); ?>"></div>
+              </div>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
+
+    </div>
   </div>
 </section>
 
