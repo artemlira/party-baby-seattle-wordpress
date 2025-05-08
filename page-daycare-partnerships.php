@@ -270,6 +270,27 @@ $green_yellow_line_title = get_field('daycare_page_green_yellow_line_title');
     <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $green_yellow_line_title; ?></h2>
   </div>
 </section>
+<section class="daycare-image-text-block daycare-text-image-block wow fadeIn">
+  <?php
+  $tib_title = get_field('daycare_page_image_and_text_block_title');
+  $tib_description = get_field('daycare_page_image_and_text_block_description');
+  $tib_image = get_field('daycare_page_image_and_text_block_image');
+  ?>
+  <div class="container">
+    <div class="flex">
+      <div class="content">
+        <h2 class="title wow fadeIn" data-wow-delay="0.2s"><?php echo $tib_title ?></h2>
+        <div class="description wow fadeIn" data-wow-delay="0.3s">
+          <?php echo $tib_description ?>
+        </div>
+      </div>
+      <div class="img-wrap wow fadeIn" data-wow-delay="0.1s">
+        <img class="hide-mobile" src="<?php echo $tib_image['url'] ?>" alt="<?php echo $tib_image['alt']; ?>">
+        <img class="hide-desktop" src="<?php echo $tib_image['url'] ?>" alt="<?php echo $tib_image['alt']; ?>">
+      </div>
+    </div>
+  </div>
+</section>
 
 
 </div>

@@ -5656,6 +5656,10 @@ body {
   background: linear-gradient(90deg, #B8F1EF 0%, #FFF 68%, #FFF294 100%);
 }
 
+.page-daycare .green-yellow-line {
+  margin-bottom: 0;
+}
+
 .page-events .green-yellow-line .title,
 .page-daycare .green-yellow-line .title {
   padding: 0;
@@ -19086,7 +19090,7 @@ body.modal-open {
 .page-daycare .daycare-text-image-block .content ul {
   padding-left: 1px;
   margin: 0;
-  margin-bottom: 45px;
+  margin-bottom: 24px;
 }
 
 .page-daycare .daycare-text-image-block .content ul li {
@@ -19147,6 +19151,31 @@ body.modal-open {
   border-top-right-radius: 300px;
 }
 
+.page-daycare .daycare-image-text-block {
+  padding-top: clamp(40px, 32.4898px + 1.6327vw, 56px);
+}
+
+.page-daycare .daycare-image-text-block .flex {
+  flex-direction: row-reverse;
+  align-items: end;
+}
+
+.page-daycare .daycare-image-text-block .content .title {
+  max-width: 720px;
+}
+
+.page-daycare .daycare-image-text-block .content .description {
+  max-width: 610px;
+  padding: 0;
+}
+
+.page-daycare .daycare-image-text-block .img-wrap::after {
+  top: initial;
+  right: -60px;
+  bottom: -50px;
+  left: initial;
+}
+
 @media screen and (max-width: 768px) {
   .page-daycare .daycare-text-image-block .flex {
     flex-direction: column;
@@ -19155,6 +19184,10 @@ body.modal-open {
 
   .page-daycare .daycare-text-image-block .content .description {
     padding: 0;
+  }
+
+  .page-daycare .daycare-image-text-block .flex {
+    align-items: center;
   }
 }
 
