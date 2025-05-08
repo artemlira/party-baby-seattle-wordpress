@@ -3466,7 +3466,8 @@ body {
   text-transform: uppercase;
 }
 
-.page-events .subscription-form .container .formkit-form h2 {
+.page-events .subscription-form .container .formkit-form h2,
+.page-daycare .subscription-form .container .formkit-form h2 {
   text-transform: initial;
 }
 
@@ -19188,6 +19189,76 @@ body.modal-open {
 
   .page-daycare .daycare-image-text-block .flex {
     align-items: center;
+  }
+}
+
+.page-daycare .sign-info {
+  padding-top: 36px;
+  padding-bottom: 54px;
+  margin-top: clamp(64px, 47.102px + 3.6735vw, 100px);
+  margin-bottom: clamp(64px, 47.102px + 3.6735vw, 100px);
+  background-color: #D3EBEB;
+}
+
+.page-daycare .sign-info .title {
+  padding: 0;
+  margin: 0;
+  font-family: HarlowDuoSerifPlain;
+  font-size: clamp(24px, 18.3673px + 1.2245vw, 36px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 50.4px */
+  color: #216F6D;
+  text-align: center;
+}
+
+.page-daycare .sign-info .subtitle {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: small-caps;
+  line-height: 150%; /* 24px */
+  color: #605E5E;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.page-daycare .sign-info .sign {
+  max-width: 704px;
+  margin: 0 auto 16px;
+  font-family: HarlowDuoSerifPlain;
+  font-size: clamp(28px, 16.7347px + 2.449vw, 52px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 72.8px */
+  color: #216F6D;
+  text-align: center;
+  letter-spacing: 1.56px;
+}
+
+.page-daycare .sign-info .text {
+  max-width: 670px;
+  margin: 0 auto;
+  font-size: clamp(12px, 11.0612px + 0.2041vw, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  color: #605E5E;
+  text-align: center;
+}
+
+.page-daycare .sign-info .container.decor::after {
+  top: initial;
+  right: 0;
+  bottom: 0;
+  left: initial;
+}
+
+@media screen and (max-width: 768px) {
+  .page-daycare .sign-info .container.decor::after {
+    content: none;
   }
 }
 

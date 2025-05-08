@@ -291,9 +291,23 @@ $green_yellow_line_title = get_field('daycare_page_green_yellow_line_title');
     </div>
   </div>
 </section>
+<section class="sign-info wow fadeIn">
+  <?php
+  $title = get_field('daycare_page_sign_info_title');
+  $subtitle = get_field('daycare_page_sign_info_subtitle');
+  $sign = get_field('daycare_page_sign_info_sign');
+  $text = get_field('daycare_page_sign_info_text');
+  ?>
+  <div class="container decor">
+    <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $title ?></h2>
+    <p class="subtitle wow fadeIn" data-wow-delay="0.3s"><?php echo $subtitle ?></p>
+    <p class="sign wow fadeIn" data-wow-delay="0.5s"><?php echo $sign ?></p>
+    <p class="text wow fadeIn" data-wow-delay="0.7s"><?php echo $text ?></p>
+  </div>
+</section>
 
 
-</div>
-
+<?php get_template_part('template-parts/instagram-feed-5'); ?>
 <?php get_template_part('template-parts/subscribe-form'); ?>
+</div>
 <?php get_footer(); ?>
