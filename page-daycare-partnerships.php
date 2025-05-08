@@ -37,6 +37,7 @@ $video_description = get_field('daycare_page_video_description');
 $video_text = get_field('daycare_page_video_text');
 $video_url = get_field('daycare_page_video_youtube_url');
 $video_thumbnail = get_field('daycare_page_video_thumbnail');
+$green_yellow_line_title = get_field('daycare_page_green_yellow_line_title');
 ?>
 <div class="page page-daycare">
   <section class="daycare-hero wow fadeIn"
@@ -222,15 +223,12 @@ $video_thumbnail = get_field('daycare_page_video_thumbnail');
           }
           ?>
           <div class="daycare-video-wrapper">
-            <!-- Превью видео -->
             <div class="daycare-video-preview" data-video-id="<?php echo esc_attr($video_id); ?>">
               <div class="daycare-video-rounded-thumbnail"
                    style="background-image: url('<?php echo esc_url($thumbnail_url); ?>')">
                 <button class="daycare-video-play-button" aria-label="Play video"></button>
               </div>
             </div>
-
-            <!-- Модальное окно -->
             <div class="daycare-video-modal" id="modal-<?php echo esc_attr($video_id); ?>">
               <div class="daycare-video-modal-overlay"></div>
               <div class="daycare-video-modal-content">
@@ -244,6 +242,32 @@ $video_thumbnail = get_field('daycare_page_video_thumbnail');
       </div>
 
     </div>
+  </div>
+</section>
+<section class="daycare-text-image-block wow fadeIn">
+  <?php
+  $tib_title = get_field('daycare_page_text_and_image_block_title');
+  $tib_description = get_field('daycare_page_text_and_image_block_description');
+  $tib_image = get_field('daycare_page_text_and_image_block_image');
+  ?>
+  <div class="container">
+    <div class="flex">
+      <div class="content">
+        <h2 class="title wow fadeIn" data-wow-delay="0.2s"><?php echo $tib_title ?></h2>
+        <div class="description wow fadeIn" data-wow-delay="0.3s">
+          <?php echo $tib_description ?>
+        </div>
+      </div>
+      <div class="img-wrap wow fadeIn" data-wow-delay="0.1s">
+        <img class="hide-mobile" src="<?php echo $tib_image['url'] ?>" alt="<?php echo $tib_image['alt']; ?>">
+        <img class="hide-desktop" src="<?php echo $tib_image['url'] ?>" alt="<?php echo $tib_image['alt']; ?>">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="green-yellow-line wow fadeIn">
+  <div class="container">
+    <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $green_yellow_line_title; ?></h2>
   </div>
 </section>
 
