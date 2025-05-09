@@ -4236,12 +4236,14 @@ body {
 
 }
 
-.page-about .sbr-owl-item {
+.page-about .sbr-owl-item,
+.page-events .sbr-owl-item {
   position: relative;
   padding-top: 84px !important;
 }
 
-.page-about .sbr-owl-item:nth-child(odd)::before {
+.page-about .sbr-owl-item:nth-child(odd)::before,
+.page-events .sbr-owl-item:nth-child(odd)::before {
   position: absolute;
   top: 0;
   left: 50%;
@@ -4251,7 +4253,8 @@ body {
   transform: translateX(-50%);
 }
 
-.page-about .sbr-owl-item:nth-child(even)::before {
+.page-about .sbr-owl-item:nth-child(even)::before,
+.page-events .sbr-owl-item:nth-child(even)::before {
   position: absolute;
   top: 0;
   left: 50%;
@@ -4259,6 +4262,10 @@ body {
   height: 60px;
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='32' viewBox='0 0 44 32' fill='none'%3E%3Cpath d='M19.9068 16.654C17.7324 23.7568 12.0746 27.6525 10.6188 28.6251C7.92482 30.4251 5.39086 31.3341 3.74974 31.8071C3.74974 31.8071 3.72989 31.8138 3.70356 31.8138C3.4944 31.4101 3.28524 31.0066 3.07608 30.6029C3.26769 30.5505 3.37342 30.5245 3.37342 30.5245C8.07673 28.8687 12.1262 25.4523 14.2532 21.0281C14.557 20.3934 14.8213 19.7388 15.0524 19.0647C13.6719 19.7585 12.1129 20.1512 10.4613 20.1512C4.84633 20.1512 0.294922 15.6419 0.294922 10.0723C0.294922 4.50927 4.84633 0 10.4613 0C14.6957 0 18.3355 2.56558 19.8614 6.21738C20.1381 6.87964 20.2804 7.42016 20.4097 7.95178C21.3475 11.8071 20.3872 15.085 19.9068 16.654Z' fill='%235F9392'/%3E%3Cpath d='M42.9051 16.654C40.7307 23.7568 35.0727 27.6525 33.6171 28.6251C30.9231 30.4251 28.3891 31.3341 26.748 31.8071C26.748 31.8071 26.7282 31.8138 26.7019 31.8138C26.4927 31.4101 26.2835 31.0066 26.0744 30.6029C26.266 30.5505 26.3717 30.5245 26.3717 30.5245C31.075 28.8687 35.1243 25.4523 37.2515 21.0281C37.5553 20.3934 37.8196 19.7388 38.0507 19.0647C36.6702 19.7585 35.1112 20.1512 33.4596 20.1512C27.8446 20.1512 23.2932 15.6419 23.2932 10.0723C23.2932 4.50927 27.8446 -3.65274e-09 33.4596 -8.15904e-09C37.694 -1.15574e-08 41.3338 2.56558 42.8597 6.21738C43.1364 6.87964 43.2787 7.42016 43.408 7.95178C44.3456 11.8071 43.3853 15.085 42.9051 16.654Z' fill='%235F9392'/%3E%3C/svg%3E");;
   transform: translateX(-50%);
+}
+
+#sb-reviews-container-2 [data-post-style="regular"] .sb-post-item-wrap {
+  border-bottom: initial !important;
 }
 
 .sb-item-author-name {
@@ -5379,14 +5386,21 @@ body {
   background: url("img/events-form-bg.jpeg") center / cover no-repeat;
 }
 
-.page-events .events-form .innerWrap {
+.page-daycare .daycare-form {
+  padding: clamp(32px, 16.9796px + 3.2653vw, 64px) clamp(0px, -39.4286px + 8.5714vw, 84px);
+  background: url("img/daycare-form-bg.jpg") center / cover no-repeat;
+}
+
+.page-events .events-form .innerWrap,
+.page-daycare .daycare-form .innerWrap {
   overflow: hidden;
   background-color: #fff;
   border: 2px solid rgb(91 209 195 / 60%);
   border-radius: 14px;
 }
 
-.page-events .events-form .section-title {
+.page-events .events-form .section-title,
+.page-daycare .daycare-form .section-title {
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
@@ -5396,7 +5410,24 @@ body {
   letter-spacing: 0.96px;
 }
 
-.page-events .events-form .titleBlock {
+.page-daycare .daycare-form .section-title {
+  max-width: 640px;
+  margin: 0 auto 8px;
+}
+
+.page-daycare .daycare-form .description {
+  max-width: 622px;
+  margin: 0 auto clamp(20px, -6.2857px + 5.7143vw, 76px);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 18px */
+  color: #5F9392;
+  text-align: center;
+}
+
+.page-events .events-form .titleBlock,
+.page-daycare .daycare-form .titleBlock {
   margin-top: 40px;
   margin-bottom: 40px;
 }
@@ -17746,8 +17777,8 @@ input.wpcf7-form-control.wpcf7-file::after {
 }
 
 .balloon_form .innerWrapper {
-  max-width: 1056px;
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   margin: auto;
   background-color: #fff;
 }
@@ -19446,6 +19477,40 @@ body.modal-open {
     flex: 0 0 100%;
     height: 75vw;
   }
+}
+
+.convertkit-form {
+  padding: clamp(32px, 16.9796px + 3.2653vw, 64px) clamp(0px, -39.4286px + 8.5714vw, 84px);
+  background: url("img/daycare-form-bg.jpg") center / cover no-repeat;
+}
+
+.convertkit-form .innerWrapper {
+  padding: 24px 80px 36px;
+  background: #FFF;
+  border: 2px solid rgb(91 209 195 / 60%);
+  border-radius: 14px;
+}
+
+.formkit-form[data-uid="9df8594da8"] {
+  max-width: 100% !important;
+}
+
+.formkit-form[data-uid="9df8594da8"] .formkit-fields {
+  gap: 24px;
+}
+
+.formkit-form[data-uid="9df8594da8"] .formkit-field {
+  flex: 1 1 47% !important;
+}
+
+.formkit-form[data-uid="9df8594da8"] .formkit-field:nth-child(7) {
+  flex: 1 1 100% !important;
+}
+
+.formkit-form[data-uid="9df8594da8"] .formkit-submit {
+  flex: 0 0 30% !important;
+  width: fit-content !important;
+  margin-inline: auto !important;
 }
 
 /* ====================================== daycare partnerships page end   ======================================== */

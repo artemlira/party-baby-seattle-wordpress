@@ -35,6 +35,11 @@ get_header(); ?>
     $events_title_decor_line_2_title = get_field('events_page_title_decor_line_2_title');
     $events_form_title = get_field('events_page_form_title');
     $events_form_description = get_field('events_page_form_description');
+    $events_home_packages_title = get_field('events_page_home_packages_title');
+    $events_home_packages_subtitle = get_field('events_page_home_packages_subtitle');
+    $events_home_packages_list_title = get_field('events_page_home_packages_list_title');
+    $events_home_packages_list = get_field('events_page_home_packages_list');
+    $events_home_packages_button = get_field('events_page_home_packages_button');
     ?>
     <section class="events-hero wow fadeIn"
              style="background-image: url(<?php echo $hero_bg ?>); background-size: cover; background-position: center;">
@@ -251,82 +256,44 @@ get_header(); ?>
       <div class="container">
         <div class="heading">
           <h2 class="title wow fadeIn"
-              data-wow-delay="0.1s"><?php esc_html_e('Soft Play & Bounce House Packages', 'partybaby'); ?></h2>
+              data-wow-delay="0.1s"><?php echo $events_home_packages_title; ?></h2>
           <p class="subtitle wow fadeIn"
-             data-wow-delay="0.2s"><?php esc_html_e('WE OFFER THE FOLLOWING 4-HOUR PLAY PACKAGES IN THE SEATTLE AREA', 'partybaby'); ?></p>
+             data-wow-delay="0.2s"><?php echo $events_home_packages_subtitle; ?></p>
           <h3 class="list-title wow fadeIn"
-              data-wow-delay="0.3s"><?php esc_html_e('Our Collections', 'partybaby'); ?></h3>
+              data-wow-delay="0.3s"><?php echo $events_home_packages_list_title; ?></h3>
         </div>
-        <div class="packages-list">
-          <div class="package-item wow fadeIn" data-wow-delay="0.4s">
-            <div class="title">
-              SUPER LUXE<br> PACKAGES
-            </div>
-            <figure class="package-image">
-              <i class="art-line"></i>
-              <div class="image-tag"><?php esc_html_e('AGE 1-5 | $825', 'partybaby'); ?></div>
-              <img src="<?php echo get_template_directory_uri() ?>/img/events-pack-1.jpeg" alt="Item 1">
-            </figure>
-            <div class="package-description">
-              <p><strong>What's better than Luxe? Super Luxe!</strong> Our most popular package, the Super Luxe
-                Packages, includes an upgrade to our popular Mini Bounce House.</p>
-              <p>This larger bounce house includes an attached ball pit, perfect for more kids to jump and play for
-                hours on end.</p>
-            </div>
-            <div class="package-price-text">
-              <?php esc_html_e('Four hour jump package | $825', 'partybaby'); ?>
-            </div>
-            <a href="<?php echo esc_url(home_url('/packages/#category-luxe')); ?>"
-               class="btn btn-line"><?php esc_html_e('View more', 'partybaby'); ?></a>
+        <?php if (!empty($events_home_packages_list)): ?>
+          <div class="packages-list">
+            <?php foreach ($events_home_packages_list as $item):
+              $image = $item['image'];
+              $btn = $item['button'];
+              ?>
+              <div class="package-item wow fadeIn" data-wow-delay="0.4s">
+                <div class="title">
+                  <?php echo $item['title']; ?>
+                </div>
+                <figure class="package-image">
+                  <i class="art-line"></i>
+                  <div class="image-tag"><?php echo $item['image_text']; ?></div>
+                  <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                </figure>
+                <div class="package-description">
+                  <?php echo $item['description']; ?>
+                </div>
+                <div class="package-price-text">
+                  <?php echo $item['price_text']; ?>
+                </div>
+                <a class="btn btn-line" href="<?php echo $btn['url']; ?>" target="<?php echo $btn['target']; ?>">
+                  <?php echo $btn['title']; ?>
+                </a>
+              </div>
+            <?php endforeach; ?>
           </div>
-          <div class="package-item wow fadeIn" data-wow-delay="0.5s">
-            <div class="title">
-              <?php esc_html_e('THE BUBBLE COLLECTION', 'partybaby'); ?>
-            </div>
-            <figure class="package-image">
-              <i class="art-line"></i>
-              <div class="image-tag"><?php esc_html_e('ALL AGES | $700', 'partybaby'); ?></div>
-              <img src="<?php echo get_template_directory_uri() ?>/img/events-pack-3.png" alt="Item 1">
-            </figure>
-            <div class="package-description">
-              <p><strong>Seattle's original Bubble House provider! Amazing party vibes with our HUGE Bubble House
-                  collection.</strong></p>
-              <p>Choose from multiple options: Mini, Standard, or even a Double Bubble! Includes 2 attendants to help
-                the kids have fun and stay safe, plus 100 balloons in your color choice circulating inside the bubble.
-                Book in advance!</p>
-            </div>
-            <div class="package-price-text">
-              <?php esc_html_e('Four hour jump package starts at $600', 'partybaby'); ?>
-            </div>
-            <a href="<?php echo esc_url(home_url('/bounce-and-bubbles-houses/#the-bubble-collection')); ?>"
-               class="btn btn-line"><?php esc_html_e('View more', 'partybaby'); ?></a>
-          </div>
-          <div class="package-item wow fadeIn" data-wow-delay="0.6s">
-            <div class="title">
-              SUPER LUXE<br> BALL PIT
-            </div>
-            <figure class="package-image">
-              <i class="art-line"></i>
-              <div class="image-tag"><?php esc_html_e('AGE 2 & UP | $675 ', 'partybaby'); ?></div>
-              <img src="<?php echo get_template_directory_uri() ?>/img/events-pack-6.jpg" alt="Item 1">
-            </figure>
-            <div class="package-description">
-              <p><strong>What's better than a ball pit? Super Luxe Ball Pit + Slide with over 4,000 balls!</strong></p>
-              <p>Your little guests will love wiggling around in this inflatable ball pit for hours, plus it’s a great
-                sensory experience for busy bodies.</p>
-            </div>
-            <div class="package-price-text">
-              <?php esc_html_e('Four hour jump package | $550', 'partybaby'); ?><br>
-              <?php esc_html_e('With slide | $675', 'partybaby'); ?>
-            </div>
-            <a href="<?php echo esc_url(home_url('/the-super-luxe/')); ?>"
-               class="btn btn-line"><?php esc_html_e('View more', 'partybaby'); ?></a>
-          </div>
-
-        </div>
+        <?php endif; ?>
         <div class="btn-wrap wow fadeIn" data-wow-delay="0.6s">
-          <a href="<?php echo esc_url(home_url('/packages/')); ?>"
-             class="btn"><?php esc_html_e('VIEW ALL PACKAGES', 'partybaby'); ?></a>
+          <a href="<?php echo $events_home_packages_button['url']; ?>"
+             target="<?php echo $events_home_packages_button['target']; ?>"
+             class="btn"><?php echo $events_home_packages_button['title']; ?></a>
         </div>
       </div>
     </section>
@@ -522,6 +489,7 @@ get_header(); ?>
         </div>
       </div>
     </section>
+    
     <?php get_template_part('template-parts/instagram-feed-5'); ?>
     <?php get_template_part('template-parts/subscribe-form'); ?>
   </div>
