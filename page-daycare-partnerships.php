@@ -1,5 +1,6 @@
 <?php get_header();
 $hero_title = get_field('daycare_page_hero_title');
+$hero_mobile_title = get_field('daycare_page_hero_mobile_title');
 $hero_subtitle = get_field('daycare_page_hero_subtitle');
 $hero_description = get_field('daycare_page_hero_description');
 $hero_link = get_field('daycare_page_hero_button');
@@ -38,14 +39,19 @@ $video_text = get_field('daycare_page_video_text');
 $video_url = get_field('daycare_page_video_youtube_url');
 $video_thumbnail = get_field('daycare_page_video_thumbnail');
 $green_yellow_line_title = get_field('daycare_page_green_yellow_line_title');
+$daycare_form_title = get_field('daycare_page_form_title');
+$daycare_form_description = get_field('daycare_page_form_description');
+$convertkit_form_title = get_field('daycare_page_convertkit_form_title');
+$convertkit_form_subtitle = get_field('daycare_page_convertkit_form_subtitletitle');
 ?>
 <div class="page page-daycare">
   <section class="daycare-hero wow fadeIn"
-           style="background-image: url(<?php echo $hero_bg ?>); background-size: cover; background-position: center;">
+           style="background-image: url(<?php echo $hero_bg ?>); background-size: cover; background-position: top;">
     <div class="container">
-      <h1 class="title  wow fadeIn"><?php echo $hero_title ?></h1>
+      <h1 class="title hide-mobile wow fadeIn"><?php echo $hero_title; ?></h1>
+      <h1 class="title hide-desktop wow fadeIn"><?php echo $hero_mobile_title; ?></h1>
       <p class="subtitle-2 wow fadeIn" data-wow-delay="0.2s"><?php echo $hero_description; ?></p>
-      <div class="bianka  wow fadeIn" data-wow-delay="0.1s"><?php echo $hero_subtitle ?></div>
+      <div class="bianka  wow fadeIn" data-wow-delay="0.1s"><?php echo $hero_subtitle; ?></div>
       <a href="<?php echo $hero_link['url'] ?>" class="btn wow fadeIn" target="<?php echo $hero_link['target']; ?>"
          data-wow-delay="0.3s"><?php echo $hero_link['title'] ?></a>
     </div>
@@ -105,7 +111,7 @@ $green_yellow_line_title = get_field('daycare_page_green_yellow_line_title');
   </div>
 </section>
 <section class="daycare-instagram-video wow fadeIn"
-         style='background:url("<?php echo $instagram_video_bg; ?>") center / cover no-repeat;'>
+         style='background:url("<?php echo $instagram_video_bg; ?>") top center / cover no-repeat;'>
   <div class="container decor">
     <div class="phone-container wow fadeIn" data-wow-delay="0.1s">
       <video class="phone-video" controls muted loop autoplay>
@@ -141,12 +147,7 @@ $green_yellow_line_title = get_field('daycare_page_green_yellow_line_title');
       <div class="quote-wrapper wow fadeIn" data-wow-delay="0.3s">
         <div class="quote"><?= $graduation_quote; ?></div>
         <div class="quote-signature">
-          <img
-              class="quote-image"
-              src="<?= $graduation_quote_signature['url']; ?>"
-              alt="<?= $graduation_quote_signature['alt']; ?>"
-              loading="lazy"
-          >
+          <p class="quote-image"><?php echo $graduation_quote_signature; ?></p>
           <p class="signature-author"><?= $graduation_quote_author; ?></p>
         </div>
       </div>
@@ -305,7 +306,15 @@ $green_yellow_line_title = get_field('daycare_page_green_yellow_line_title');
     <p class="text wow fadeIn" data-wow-delay="0.7s"><?php echo $text ?></p>
   </div>
 </section>
-
+<section class="convertkit-form" id="convertkit-form">
+  <div class="container">
+    <div class="innerWrapper">
+      <h2 class="title"><?php echo $convertkit_form_title; ?></h2>
+      <p class="subtitle"><?php echo $convertkit_form_subtitle; ?></p>
+      <script async data-uid="168b5fff4a" src="https://party-baby-seattle.kit.com/168b5fff4a/index.js"></script>
+    </div>
+  </div>
+</section>
 <section class="daycare-gallery wow fadeIn">
   <div class="container">
     <div class="titleBlock">
@@ -344,8 +353,38 @@ $green_yellow_line_title = get_field('daycare_page_green_yellow_line_title');
     <div class="slogan"><?php echo get_field('daycare_page_gallery_slogan'); ?></div>
   </div>
 </section>
+<section class="daycare-form" id="daycare-form">
+  <div class="container">
+    <div class="innerWrap">
+      <div class="titleBlock">
+        <?php if ($daycare_form_title): ?>
+          <h2 class="section-title"><?php echo $daycare_form_title; ?></h2>
+        <?php endif; ?>
+        <?php if ($daycare_form_description): ?>
+          <div class="description"><?php echo $daycare_form_description; ?></div>
+        <?php endif; ?>
+      </div>
+      <div class="hb-p-62b618fe3cd6df00081819e8-16"></div>
+      <img height="1" width="1" style="display:none" src="https://www.honeybook.com/p.png?pid=62b618fe3cd6df00081819e8">
+      <script>
+        (function (h, b, s, n, i, p, e, t) {
+          h._HB_ = h._HB_ || {};
+          h._HB_.pid = i;
+          ;
+          ;
+          ;
+          t = b.createElement(s);
+          t.type = "text/javascript";
+          t.async = !0;
+          t.src = n;
+          e = b.getElementsByTagName(s)[0];
+          e.parentNode.insertBefore(t, e);
+        })(window, document, "script", "https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js", "62b618fe3cd6df00081819e8");
+      </script>
 
-
+    </div>
+  </div>
+</section>
 <?php get_template_part('template-parts/instagram-feed-5'); ?>
 <?php get_template_part('template-parts/subscribe-form'); ?>
 </div>
