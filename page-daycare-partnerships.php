@@ -20,6 +20,8 @@ $instagram_video_description = get_field('daycare_page_instagram_video_descripti
 $instagram_video_text = get_field('daycare_page_instagram_video_text');
 $instagram_video_bg = get_field('daycare_page_instagram_video_bg');
 $instagram_video_video = get_field('daycare_page_instagram_video_video');
+$instagram_video_world_kids_link = get_field('daycare_page_instagram_video_world_kids_link');
+$instagram_video_world_kids_logo = get_field('daycare_page_instagram_video_world_kids_logo');
 $sensory_play_title = get_field('daycare_page_sensory_play_title');
 $sensory_play_subtitle = get_field('daycare_page_sensory_play_subtitle');
 $sensory_play_description = get_field('daycare_page_sensory_play_description');
@@ -110,8 +112,7 @@ $convertkit_form_subtitle = get_field('daycare_page_convertkit_form_subtitletitl
     <?php endif; ?>
   </div>
 </section>
-<section class="daycare-instagram-video wow fadeIn"
-         style='background:url("<?php echo $instagram_video_bg; ?>") top center / cover no-repeat;'>
+<section class="daycare-instagram-video wow fadeIn">
   <div class="container decor">
     <div class="phone-container wow fadeIn" data-wow-delay="0.1s">
       <video class="phone-video" controls muted loop autoplay>
@@ -125,11 +126,21 @@ $convertkit_form_subtitle = get_field('daycare_page_convertkit_form_subtitletitl
       <div class="description"><?= $instagram_video_description; ?></div>
       <p class="text"><?= $instagram_video_text; ?></p>
     </div>
+    <div class="world-kids-wrap">
+      <a class="world-kids-link" href="<?php echo $instagram_video_world_kids_link['url']; ?>"
+         target="<?php echo $instagram_video_world_kids_link['target']; ?>">
+        <img class="world-kids-logo"
+             src="<?php echo $instagram_video_world_kids_logo['url']; ?>"
+             alt="<?php echo $instagram_video_world_kids_logo['alt']; ?>"
+             loading="lazy"
+        >
+      </a>
+    </div>
   </div>
   <script>
     const video = document.querySelector('.phone-video');
     video.addEventListener('error', () => {
-      console.error('Ошибка загрузки видео:', video.error);
+      console.error('Error loading video:', video.error);
     });
   </script>
 </section>
@@ -301,20 +312,25 @@ $convertkit_form_subtitle = get_field('daycare_page_convertkit_form_subtitletitl
   ?>
   <div class="container decor">
     <h2 class="title wow fadeIn" data-wow-delay="0.1s"><?php echo $title ?></h2>
-    <p class="subtitle wow fadeIn" data-wow-delay="0.3s"><?php echo $subtitle ?></p>
+    <div class="btn-wrap">
+      <a class="subtitle btn wow fadeIn" href="https://party-baby-seattle.kit.com/168b5fff4a"
+         data-formkit-toggle="168b5fff4a"
+         target="<?php echo $subtitle['target']; ?>" data-wow-delay="0.3s"><?php echo $subtitle['title']; ?></a>
+    </div>
     <p class="sign wow fadeIn" data-wow-delay="0.5s"><?php echo $sign ?></p>
     <p class="text wow fadeIn" data-wow-delay="0.7s"><?php echo $text ?></p>
   </div>
+  <script async data-uid="168b5fff4a" src="https://party-baby-seattle.kit.com/168b5fff4a/index.js"></script>
 </section>
-<section class="convertkit-form" id="convertkit-form">
-  <div class="container">
-    <div class="innerWrapper">
-      <h2 class="title"><?php echo $convertkit_form_title; ?></h2>
-      <p class="subtitle"><?php echo $convertkit_form_subtitle; ?></p>
-      <script async data-uid="168b5fff4a" src="https://party-baby-seattle.kit.com/168b5fff4a/index.js"></script>
-    </div>
-  </div>
-</section>
+<!--<section class="convertkit-form" id="convertkit-form">-->
+<!--  <div class="container">-->
+<!--    <div class="innerWrapper">-->
+<!--      <h2 class="title">--><?php //echo $convertkit_form_title; ?><!--</h2>-->
+<!--      <p class="subtitle">--><?php //echo $convertkit_form_subtitle; ?><!--</p>-->
+<!--      <script async data-uid="168b5fff4a" src="https://party-baby-seattle.kit.com/168b5fff4a/index.js"></script>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
 <section class="daycare-gallery wow fadeIn">
   <div class="container">
     <div class="titleBlock">

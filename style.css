@@ -18421,9 +18421,12 @@ input.wpcf7-form-control.wpcf7-file::after {
 
 .page-daycare .daycare-instagram-video::after {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  width: 42%;
+  height: 100%;
   content: '';
-  background: linear-gradient(90deg, #FFF 0%, rgb(255 255 255 / 92%) 38.7%, rgb(255 255 255 / 21%) 83.25%);
+  background: linear-gradient(90deg, #FFF 0%, rgb(255 255 255 / 92%) 38.7%, rgb(255 255 255 / 21%) 83.25%), url("img/instagram-video-bg-small.jpg") left 1px center / cover no-repeat;
 }
 
 .page-daycare .daycare-instagram-video .container {
@@ -18431,7 +18434,43 @@ input.wpcf7-form-control.wpcf7-file::after {
   z-index: 1;
   display: flex;
   gap: 48px;
-  background: url("img/Worldkids1.png") bottom right / 210px 145px no-repeat;
+}
+
+.page-daycare .daycare-instagram-video .container .world-kids-wrap {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 142px;
+  height: 142px;
+  padding: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 50%;
+  transition-duration: 0.5s;
+}
+
+.page-daycare .daycare-instagram-video .container .world-kids-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.page-daycare .daycare-instagram-video .container .world-kids-wrap:hover,
+.page-daycare .daycare-instagram-video .container .world-kids-link:focus {
+  transform: scale(1.1);
+}
+
+.page-daycare .daycare-instagram-video .container .world-kids-link:focus {
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page-daycare .daycare-instagram-video .container .world-kids-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition-duration: 0.5s;
 }
 
 .page-daycare .daycare-instagram-video .container::before {
@@ -18508,7 +18547,7 @@ input.wpcf7-form-control.wpcf7-file::after {
 }
 
 .page-daycare .daycare-instagram-video .description {
-  max-width: 530px;
+  max-width: 567px;
   margin: 0 0 clamp(16px, 12.2449px + 0.8163vw, 24px);
   font-size: clamp(12px, 11.0612px + 0.2041vw, 14px);
   font-style: normal;
@@ -18519,6 +18558,7 @@ input.wpcf7-form-control.wpcf7-file::after {
 
 .page-daycare .daycare-instagram-video .text {
   max-width: 530px;
+  font-family: Montserrat-Medium, sans-serif;
   font-size: 12px;
   font-style: italic;
   font-weight: 500;
@@ -18527,14 +18567,20 @@ input.wpcf7-form-control.wpcf7-file::after {
 }
 
 @media screen and (max-width: 998px) {
-  .page-daycare .daycare-instagram-video .container {
-    background: initial;
+  .page-daycare .daycare-instagram-video .container .world-kids-wrap {
+    display: none;
+    visibility: hidden;
+  }
+
+  .page-daycare .daycare-instagram-video::after {
+    background: linear-gradient(90deg, #FFF 0%, rgb(255 255 255 / 70%) 100%, rgb(255 255 255 / 21%) 83.25%), url("img/instagram-video-bg-small.jpg") left 1px center / cover no-repeat;
   }
 }
 
 @media screen and (max-width: 768px) {
   .page-daycare .daycare-instagram-video::after {
-    background: linear-gradient(180deg, #FFF 0%, rgb(255 255 255 / 74%) 41.73%, rgb(255 255 255 / 50%) 100%);
+    width: 100%;
+    background: linear-gradient(180deg, #FFF 0%, rgb(255 255 255 / 74%) 41.73%, rgb(255 255 255 / 50%) 100%), url("img/instagram-video-bg-small.jpg") left 1px center / cover no-repeat;
   }
 
   .page-daycare .daycare-instagram-video .container {
@@ -19293,7 +19339,6 @@ body.modal-open {
   padding-top: 36px;
   padding-bottom: 54px;
   margin-top: clamp(64px, 47.102px + 3.6735vw, 100px);
-  margin-bottom: clamp(64px, 47.102px + 3.6735vw, 100px);
   background-color: #D3EBEB;
 }
 
@@ -19309,17 +19354,27 @@ body.modal-open {
   text-align: center;
 }
 
+.page-daycare .sign-info .btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .page-daycare .sign-info .subtitle {
+  display: inline-flex;
+  padding-right: 20px;
+  padding-left: 20px;
   margin-top: 0;
-  margin-bottom: 24px;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   font-variant: small-caps;
   line-height: 150%; /* 24px */
   color: #605E5E;
-  text-align: center;
   text-transform: capitalize;
+  margib: 0 auto 24px;
 }
 
 .page-daycare .sign-info .sign {
@@ -19579,40 +19634,60 @@ body.modal-open {
   text-align: center;
 }
 
-.formkit-form[data-uid="168b5fff4a"] {
-  max-width: 100% !important;
-}
+/* .formkit-form[data-uid="168b5fff4a"] { */
 
-.formkit-form[data-uid="168b5fff4a"] .formkit-fields {
-  gap: 24px;
-}
+/*  max-width: 100% !important; */
 
-.formkit-form[data-uid="168b5fff4a"] .formkit-field {
-  flex: 1 1 47% !important;
-}
+/* } */
 
-.formkit-form[data-uid="168b5fff4a"] .formkit-field:nth-child(7) {
-  flex: 1 1 100% !important;
-}
+/* .formkit-form[data-uid="168b5fff4a"] .formkit-fields { */
 
-.formkit-form[data-uid="168b5fff4a"] .formkit-submit {
-  flex: 0 0 30% !important;
-  width: fit-content !important;
-  margin-inline: auto !important;
-}
+/*  gap: 24px; */
 
-@media screen and (max-width: 768px) {
-  .formkit-form[data-uid="168b5fff4a"] .formkit-field {
-    flex: 1 1 100% !important;
-  }
+/* } */
 
-  .formkit-form[data-uid="168b5fff4a"] .formkit-field:nth-child(7) {
-    flex: 1 1 100% !important;
-  }
+/* .formkit-form[data-uid="168b5fff4a"] .formkit-field { */
 
-  .formkit-form[data-uid="168b5fff4a"] .formkit-submit {
-    flex: 1 1 100% !important;
-  }
-}
+/*  flex: 1 1 47% !important; */
+
+/* } */
+
+/* .formkit-form[data-uid="168b5fff4a"] .formkit-field:nth-child(7) { */
+
+/*  flex: 1 1 100% !important; */
+
+/* } */
+
+/* .formkit-form[data-uid="168b5fff4a"] .formkit-submit { */
+
+/*  flex: 0 0 30% !important; */
+
+/*  width: fit-content !important; */
+
+/*  margin-inline: auto !important; */
+
+/* } */
+
+/* @media screen and (max-width: 768px) { */
+
+/*  .formkit-form[data-uid="168b5fff4a"] .formkit-field { */
+
+/*    flex: 1 1 100% !important; */
+
+/*  } */
+
+/*  .formkit-form[data-uid="168b5fff4a"] .formkit-field:nth-child(7) { */
+
+/*    flex: 1 1 100% !important; */
+
+/*  } */
+
+/*  .formkit-form[data-uid="168b5fff4a"] .formkit-submit { */
+
+/*    flex: 1 1 100% !important; */
+
+/*  } */
+
+/* } */
 
 /* ====================================== daycare partnerships page end   ======================================== */
